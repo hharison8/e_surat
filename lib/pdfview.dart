@@ -30,19 +30,20 @@ void _showTextFieldAlert(BuildContext context) {
       return AlertDialog(
         title: Text('Revisi'),
         content: Container(
-          width: MediaQuery.of(context).size.width * 0.8, // Adjust the width as needed
+          width: MediaQuery.of(context).size.width *
+              0.8, // Adjust the width as needed
           child: Column(
-            mainAxisSize: MainAxisSize.min, // Ensures the dialog box takes minimum space
+            mainAxisSize:
+                MainAxisSize.min, // Ensures the dialog box takes minimum space
             children: [
               Container(
                 padding: EdgeInsets.all(4),
-              child: TextField(
-                
-                controller: textController1,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+                child: TextField(
+                  controller: textController1,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
                 ),
-              ),
               ),
             ],
           ),
@@ -81,12 +82,12 @@ void _showTextFieldAlert(BuildContext context) {
                 },
               );
             },
-              icon: Icon(
-                Icons.save,
-                size: 24,
-              ),
-              label: Text('Simpan'),
+            icon: Icon(
+              Icons.save,
+              size: 24,
             ),
+            label: Text('Simpan'),
+          ),
         ],
       );
     },
@@ -297,7 +298,8 @@ class pdfView extends StatelessWidget {
                             ListTile(
                               title: Text('Disposisi Keluar'),
                               onTap: () {
-                                Navigator.pushNamed(context, '/disposisiKeluar');
+                                Navigator.pushNamed(
+                                    context, '/disposisiKeluar');
                               },
                             ),
                           ],
@@ -331,7 +333,7 @@ class pdfView extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, '/');
               },
               child: const Text('logout'),
@@ -344,7 +346,6 @@ class pdfView extends StatelessWidget {
           children: [
             Container(
                 margin: EdgeInsets.all(8),
-                padding: EdgeInsets.all(16),
                 child: const Center(
                   child: Text('Test/001',
                       style: TextStyle(
@@ -355,160 +356,175 @@ class pdfView extends StatelessWidget {
                 )),
             Container(
               margin: EdgeInsets.all(16),
-              width: 350,
-              height: 500,
+              width: 320,
+              height: 450,
               decoration: BoxDecoration(
                   border: Border.all(
                 color: Colors.grey,
-                width: 32.0,
+                width: 16.0,
               )),
               child: SfPdfViewer.asset('assets/sample.pdf'),
             ),
             Container(
-              height: 20,
-              width: 350,
-            ),
-            Container(
-              padding: EdgeInsets.all(16),
-              width: 350,
-              height: 424,
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 223, 223, 223),
-              ),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
+              width: 340,
+              height: 50,
+              padding: EdgeInsets.all(8),
+              child: ElevatedButton(
+                child: const Text('Detail Surat'),
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context){
+                      return const SingleChildScrollView(
+                        padding: EdgeInsets.all(16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
                     'Sifat :',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     'Biasa',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 14),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     'Tanggal Surat :',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     '23/09/2023',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 14),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     'Perihal :',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     'Test',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 14),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     'Tanggal Kegiatan :',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     '23/09/2023',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 14),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     'Dari :',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     '08.00.00',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 14),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     'Sampai :',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     '11.00.00',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 14),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     'Tempat Kegiatan :',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
                   Text(
                     'Test',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 14),
                   ),
                    SizedBox(
                     height: 8.0,
                   ),
-                ],
+                          ],
+                          )
+                      );
+                    }
+                  );
+                },
+                style: ButtonStyle(
+                  backgroundColor:
+                  MaterialStateProperty.all<Color>(Colors.grey),
+                ),
               ),
             ),
             Container(
-              width: 350,
+              width: 355,
               height: 100,
-              padding: EdgeInsets.symmetric(
-                horizontal: 16
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
                   Container(
-                    height: 50,
-                    width: 140,
-                    child: ElevatedButton(
-                     onPressed: () {
-                      _showTextFieldAlert(context);
-                     },
-                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.red),),
-                     child: Text('Revisi', style: TextStyle(fontSize: 14),), 
-                    )
-                  ),
+                      height: 50,
+                      width: 140,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          _showTextFieldAlert(context);
+                        },
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.red),
+                        ),
+                        child: Text(
+                          'Revisi',
+                          style: TextStyle(fontSize: 14),
+                        ),
+                      )),
                   Spacer(),
                   Container(
-                    height: 50,
-                    width: 140,
-                    child: ElevatedButton(
-                     onPressed: () {
-                      _showPopupAlert(context);
-                     },
-                     child: Text('Accept', style: TextStyle(fontSize: 14),), 
-                    )
-                  ),
+                      height: 50,
+                      width: 140,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          _showPopupAlert(context);
+                        },
+                        child: const Text(
+                          'Accept',
+                          style: TextStyle(fontSize: 14),
+                        ),
+                      )),
                 ],
               ),
             )
