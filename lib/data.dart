@@ -5,7 +5,7 @@ class mydata extends DataTableSource{
     200, 
     (index) => {
       'no': 'Test/ $index',
-      'perihal': 'Test app $index',
+      'perihal': 'Test app  $index',
     });
 
   @override
@@ -13,8 +13,18 @@ class mydata extends DataTableSource{
     return DataRow(cells: [
     DataCell(Text(_data[index]['no'])),
     DataCell(Text(_data[index]['perihal'])),
+    DataCell(MaterialButton(
+      onPressed: (){
+        
+      },
+      child: const Text(
+        'action',
+      ),
+      color: Colors.blue,
+      ))
     ]);
   }
+
 
   @override
   bool get isRowCountApproximate => false;
