@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data.dart';
 
-List<DropdownMenuItem<String>> get dropdownItems{
+List<DropdownMenuItem<String>> get dropdownItems {
   List<DropdownMenuItem<String>> menuItems = [
-    const DropdownMenuItem(child: Text("Terverifikasi"),value: "Terverifikasi"),
-    const DropdownMenuItem(child: Text("Belum Terverifikasi"),value: "Belum Terverifikasi"),
+    const DropdownMenuItem(
+        child: Text("Terverifikasi"), value: "Terverifikasi"),
+    const DropdownMenuItem(
+        child: Text("Belum Terverifikasi"), value: "Belum Terverifikasi"),
   ];
   return menuItems;
 }
@@ -23,17 +25,16 @@ class _ParafState extends State<Paraf> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 239, 239, 239),
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        centerTitle: true,
-        title: const Text(
-          'Permohonan Paraf',
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.black,
-          ),
-        )
-      ),
+          iconTheme: const IconThemeData(color: Colors.black),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          centerTitle: true,
+          title: const Text(
+            'Permohonan Paraf',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black,
+            ),
+          )),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -101,28 +102,29 @@ class _ParafState extends State<Paraf> {
                       const SizedBox(
                         width: 8,
                         height: 120,
-                        child: ColoredBox(color: Color.fromARGB(255, 224, 243, 255)),
+                        child: ColoredBox(
+                            color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                    SizedBox(
-                      height: 120,
-                      width: 220,
-                      child: Column(
-                        children: [
-                          ListTile(
-                            title: const Text('Pengesahan'),
-                            onTap: (){
-                              Navigator.pushNamed(context, '/pengesahan');
-                            },
-                          ),
-                          ListTile( 
-                            title: const Text('Recheck'),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/recheck');
-                            },
-                          ),
-                        ],
-                      ),
-                    )
+                      SizedBox(
+                        height: 120,
+                        width: 220,
+                        child: Column(
+                          children: [
+                            ListTile(
+                              title: const Text('Pengesahan'),
+                              onTap: () {
+                                Navigator.pushNamed(context, '/pengesahan');
+                              },
+                            ),
+                            ListTile(
+                              title: const Text('Recheck'),
+                              onTap: () {
+                                Navigator.pushNamed(context, '/recheck');
+                              },
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 )
@@ -157,28 +159,29 @@ class _ParafState extends State<Paraf> {
                       const SizedBox(
                         width: 8,
                         height: 120,
-                        child: ColoredBox(color: Color.fromARGB(255, 224, 243, 255)),
+                        child: ColoredBox(
+                            color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                    SizedBox(
-                      height: 120,
-                      width: 150,
-                      child: Column(
-                        children: [
-                          ListTile(
-                            title: const Text('Surat Keluar'),
-                            onTap: (){
-                              Navigator.pushNamed(context, '/suratKeluar');
-                            },
-                          ),
-                          ListTile( 
-                            title: const Text('Draft Surat'),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/draftSurat');
-                            },
-                          ),
-                        ],
-                      ),
-                    )
+                      SizedBox(
+                        height: 120,
+                        width: 150,
+                        child: Column(
+                          children: [
+                            ListTile(
+                              title: const Text('Surat Keluar'),
+                              onTap: () {
+                                Navigator.pushNamed(context, '/suratKeluar');
+                              },
+                            ),
+                            ListTile(
+                              title: const Text('Draft Surat'),
+                              onTap: () {
+                                Navigator.pushNamed(context, '/draftSurat');
+                              },
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 )
@@ -202,28 +205,30 @@ class _ParafState extends State<Paraf> {
                       const SizedBox(
                         width: 8,
                         height: 120,
-                        child: ColoredBox(color: Color.fromARGB(255, 224, 243, 255)),
+                        child: ColoredBox(
+                            color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                    SizedBox(
-                      height: 120,
-                      width: 150,
-                      child: Column(
-                        children: [
-                          ListTile(
-                            title: const Text('Disposisi Masuk'),
-                            onTap: (){
-                              Navigator.pushNamed(context, '/disposisiMasuk');
-                            },
-                          ),
-                          ListTile( 
-                            title: const Text('Disposisi Keluar'),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/disposisiKeluar');
-                            },
-                          ),
-                        ],
-                      ),
-                    )
+                      SizedBox(
+                        height: 120,
+                        width: 150,
+                        child: Column(
+                          children: [
+                            ListTile(
+                              title: const Text('Disposisi Masuk'),
+                              onTap: () {
+                                Navigator.pushNamed(context, '/disposisiMasuk');
+                              },
+                            ),
+                            ListTile(
+                              title: const Text('Disposisi Keluar'),
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, '/disposisiKeluar');
+                              },
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 )
@@ -252,7 +257,7 @@ class _ParafState extends State<Paraf> {
               },
             ),
             ElevatedButton(
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, '/');
               },
               child: const Text('logout'),
@@ -266,12 +271,15 @@ class _ParafState extends State<Paraf> {
             children: [
               Container(
                 padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.only(top: 24,left: 8,right: 8,bottom: 0),
+                margin: const EdgeInsets.only(
+                    top: 24, left: 8, right: 8, bottom: 0),
                 width: 364,
                 height: 120,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight: Radius.circular(8)),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(8),
+                      topRight: Radius.circular(8)),
                 ),
                 child: Align(
                   alignment: Alignment.center,
@@ -281,97 +289,98 @@ class _ParafState extends State<Paraf> {
                         margin: const EdgeInsets.all(8),
                         child: const Text(
                           'Status :',
-                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
-                          ),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
                       ),
                       DropdownButtonFormField(
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Color.fromARGB(255, 179, 179, 179), width: 2),
-                            borderRadius: BorderRadius.circular(8)
-                          )
-                        ),
-                        value: dropdownValue,
-                        items: dropdownItems, 
-                        icon: Image.asset('assets/more.png'),
-                        onChanged: (String? newvalue) {
-                          setState(() {
-                            dropdownValue = newvalue!;
-                          });
-                        }
-                      ),
+                          decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Color.fromARGB(255, 179, 179, 179),
+                                      width: 2),
+                                  borderRadius: BorderRadius.circular(8))),
+                          value: dropdownValue,
+                          items: dropdownItems,
+                          icon: Image.asset('assets/more.png'),
+                          onChanged: (String? newvalue) {
+                            setState(() {
+                              dropdownValue = newvalue!;
+                            });
+                          }),
                     ],
                   ),
                 ),
               ),
               Container(
                 padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.only(top: 0,left: 8,right: 8,bottom: 0),
+                margin:
+                    const EdgeInsets.only(top: 0, left: 8, right: 8, bottom: 0),
                 width: 364,
                 height: 80,
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  border: Border(
-                    top: BorderSide(
-                      color: Color.fromARGB(255, 179, 179, 179)
-                    )
-                  )
-                ),
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    border: Border(
+                        top: BorderSide(
+                            color: Color.fromARGB(255, 179, 179, 179)))),
                 child: const Align(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: Alignment.centerLeft,
-                        child:
-                        TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Search', 
-                            suffixIcon: Icon(Icons.search,color: Colors.black,)
-                          ),
-                        )
-                      ),
+                          alignment: Alignment.centerLeft,
+                          child: TextField(
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: 'Search',
+                                suffixIcon: Icon(
+                                  Icons.search,
+                                  color: Colors.black,
+                                )),
+                          )),
                     ],
                   ),
                 ),
-                
               ),
               Container(
-                padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.only(top: 0,left: 8,right: 8,bottom: 24),
-                width: 364,
-                height:400,
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8),bottomRight: Radius.circular(8)),
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Column(
-                    children: [
-                      PaginatedDataTable(
-                        source: _data,
-                        columns: const [
-                          DataColumn(label: Text('no surat')),
-                          DataColumn(label: Text('perihal')),
-                        ],
-                        rowsPerPage: 5,
-                      ),
-                    ],
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.only(
+                      top: 0, left: 8, right: 8, bottom: 24),
+                  width: 364,
+                  height: 400,
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(8),
+                        bottomRight: Radius.circular(8)),
                   ),
-                )
-              ),
+                  child: Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: Column(
+                      children: [
+                        PaginatedDataTable(
+                          source: _data,
+                          columns: [
+                            DataColumn(label: Text('no surat')),
+                            DataColumn(label: Text('perihal')),
+                          ],
+                          rowsPerPage: 5,
+                        ),
+                      ],
+                    ),
+                  )),
               SizedBox(
-                height: 50,
-                width: 140,
-                child: ElevatedButton(
-                  onPressed: () {
-                  Navigator.pushNamed(context, '/pdfView');
-                  },
-                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
-                )
-              ),
+                  height: 50,
+                  width: 140,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/pdfView');
+                    },
+                    child: Text(
+                      'Accept',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  )),
             ],
           ),
         ),
