@@ -373,120 +373,139 @@ class pdfView extends StatelessWidget {
                 child: const Text('Detail Surat'),
                 onPressed: () {
                   showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext context){
-                      return const SingleChildScrollView(
-                        padding: EdgeInsets.all(16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                    'Sifat :',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    'Biasa',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    'Tanggal Surat :',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    '23/09/2023',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    'Perihal :',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    'Test',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    'Tanggal Kegiatan :',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    '23/09/2023',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    'Dari :',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    '08.00.00',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    'Sampai :',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    '11.00.00',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    'Tempat Kegiatan :',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    'Test',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                   SizedBox(
-                    height: 8.0,
-                  ),
-                          ],
-                          )
-                      );
-                    }
-                  );
+                      context: context,
+                      builder: (BuildContext context) {
+                        return SingleChildScrollView(
+                            padding: EdgeInsets.all(16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Sifat :',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  'Biasa',
+                                  style: TextStyle(fontSize: 14),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  'Tanggal Surat :',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  '23/09/2023',
+                                  style: TextStyle(fontSize: 14),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  'Perihal :',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  'Test',
+                                  style: TextStyle(fontSize: 14),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  'Tanggal Kegiatan :',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  '23/09/2023',
+                                  style: TextStyle(fontSize: 14),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  'Dari :',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  '08.00.00',
+                                  style: TextStyle(fontSize: 14),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  'Sampai :',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  '11.00.00',
+                                  style: TextStyle(fontSize: 14),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  'Tempat Kegiatan :',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  'Test',
+                                  style: TextStyle(fontSize: 14),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Container(
+                                child:Center( 
+                                  child: ElevatedButton.icon(
+                                    onPressed: (){},
+                                    icon: Icon(Icons.download),
+                                    label: Text('Unduh File')))
+                                ),
+                              ],
+                            ));
+                      });
                 },
                 style: ButtonStyle(
                   backgroundColor:
-                  MaterialStateProperty.all<Color>(Colors.grey),
+                      MaterialStateProperty.all<Color>(Colors.grey),
                 ),
               ),
             ),
