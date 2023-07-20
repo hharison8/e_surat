@@ -143,7 +143,7 @@ class pdfViewSuratMasuk extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Permohonan Paraf',
+          'Surat Masuk',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -166,7 +166,6 @@ class pdfViewSuratMasuk extends StatelessWidget {
               ),
             ),
             ListTile(
-              tileColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -246,6 +245,7 @@ class pdfViewSuratMasuk extends StatelessWidget {
               ],
             ),
             ListTile(
+              tileColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,

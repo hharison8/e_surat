@@ -206,7 +206,7 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 150,
+                      width: 220,
                       child: Column(
                         children: [
                           ListTile(

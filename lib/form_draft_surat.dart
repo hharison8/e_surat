@@ -123,6 +123,7 @@ class formDraftSurat extends StatelessWidget {
               },
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -144,7 +145,7 @@ class formDraftSurat extends StatelessWidget {
                       ),
                     Container(
                       height: 120,
-                      width: 150,
+                      width: 220,
                       child: Column(
                         children: [
                           ListTile(
@@ -154,6 +155,7 @@ class formDraftSurat extends StatelessWidget {
                             },
                           ),
                           ListTile( 
+                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Draft Surat'),
                             onTap: () {
                               Navigator.pushNamed(context, '/draftSurat');
@@ -234,16 +236,12 @@ class formDraftSurat extends StatelessWidget {
                 Navigator.pushNamed(context, '/help');
               },
             ),
-            Container(
-              width: 2,
-              height: 50,
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 114, 127, 252)
-              ),
-              child: const Center(
-                child: Text('logout'),
-              ),
-            )
+            ElevatedButton(
+              onPressed: (){
+                Navigator.pushNamed(context, '/');
+              },
+              child: const Text('logout'),
+            ),
           ],
         ),
       ),
