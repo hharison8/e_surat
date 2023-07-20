@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 void _showPopupAlert(BuildContext context) {
   showDialog(
     context: context,
@@ -137,7 +133,7 @@ void _showTextFieldAlert(BuildContext context) {
   );
 }
 
-class MyApp extends StatelessWidget {
+class pdfViewSuratMasuk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

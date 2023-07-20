@@ -362,6 +362,16 @@ class _suratMasukState extends State<suratMasuk> {
                   ),
                 )
               ),
+              SizedBox(
+                height: 50,
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: () {
+                  Navigator.pushNamed(context, '/pdfViewSuratMasuk');
+                  },
+                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
+                )
+              ),
             ],
           ),
         ),

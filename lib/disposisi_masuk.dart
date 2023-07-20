@@ -363,6 +363,16 @@ class _disposisiMasukState extends State<disposisiMasuk> {
                   ),
                 )
               ),
+              SizedBox(
+                height: 50,
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: () {
+                  Navigator.pushNamed(context, '/pdfDispMasuk');
+                  },
+                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
+                )
+              ),
             ],
           ),
         ),

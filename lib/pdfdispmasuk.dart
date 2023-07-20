@@ -94,7 +94,7 @@ void _showTextFieldAlert(BuildContext context) {
   );
 }
 
-class pdfView extends StatelessWidget {
+class pdfDispMasuk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
