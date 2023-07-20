@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
+class formDraftSuratextends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,16 +10,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  String _selectedItem = 'Biasa'; // Initial selected item
-
-  List<String> _dropdownItems = ['Biasa', 'Menengah', 'Penting'];
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -144,6 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -165,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     Container(
                       height: 120,
-                      width: 150,
+                      width: 220,
                       child: Column(
                         children: [
                           ListTile(
@@ -175,6 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             },
                           ),
                           ListTile( 
+                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Draft Surat'),
                             onTap: () {
                               Navigator.pushNamed(context, '/draftSurat');
@@ -255,16 +245,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, '/help');
               },
             ),
-            Container(
-              width: 2,
-              height: 50,
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 114, 127, 252)
-              ),
-              child: const Center(
-                child: Text('logout'),
-              ),
-            )
+            ElevatedButton(
+              onPressed: (){
+                Navigator.pushNamed(context, '/');
+              },
+              child: const Text('logout'),
+            ),
           ],
         ),
       ),

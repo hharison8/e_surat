@@ -206,7 +206,7 @@ class _disposisiMasukState extends State<disposisiMasuk> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 150,
+                      width: 220,
                       child: Column(
                         children: [
                           ListTile(
