@@ -136,15 +136,6 @@ void _showTextFieldAlert(BuildContext context) {
 class pdfViewSuratMasuk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 239, 239, 239),
       appBar: AppBar(
@@ -183,7 +174,7 @@ class MyHomePage extends StatelessWidget {
               ),
               title: Text('Dashboard'),
               onTap: () {
-                // Tambahkan logika ketika menu 1 dipilih
+                Navigator.pushNamed(context, '/about');
               },
             ),
             ListTile(
@@ -194,7 +185,7 @@ class MyHomePage extends StatelessWidget {
               ),
               title: Text('Profil'),
               onTap: () {
-                // Tambahkan logika ketika menu 2 dipilih
+                Navigator.pushNamed(context, '/profil');
               },
             ),
             ListTile(
@@ -205,7 +196,7 @@ class MyHomePage extends StatelessWidget {
               ),
               title: Text('Permohonan Paraf'),
               onTap: () {
-                // Tambahkan logika ketika menu 2 dipilih
+                Navigator.pushNamed(context, '/paraf');
               },
             ),
             ExpansionTile(
@@ -236,11 +227,15 @@ class MyHomePage extends StatelessWidget {
                           children: [
                             ListTile(
                               title: Text('Pengesahan'),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(context, '/pengesahan');
+                              },
                             ),
                             ListTile(
                               title: Text('Recheck'),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(context, '/recheck');
+                              },
                             ),
                           ],
                         ),
@@ -256,9 +251,9 @@ class MyHomePage extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/suratMasuk.png'),
               ),
-              title: Text('Surat Masuk'),
+              title: const Text('Surat Masuk'),
               onTap: () {
-                // Tambahkan logika ketika menu 2 dipilih
+                Navigator.pushNamed(context, '/suratMasuk');
               },
             ),
             ExpansionTile(
@@ -289,11 +284,15 @@ class MyHomePage extends StatelessWidget {
                           children: [
                             ListTile(
                               title: Text('Surat Keluar'),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(context, '/suratKeluar');
+                              },
                             ),
                             ListTile(
                               title: Text('Draft Surat'),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(context, '/draftSurat');
+                              },
                             ),
                           ],
                         ),
@@ -331,11 +330,15 @@ class MyHomePage extends StatelessWidget {
                           children: [
                             ListTile(
                               title: Text('Disposisi Masuk'),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(context, '/disposisiMasuk');
+                              },
                             ),
                             ListTile(
                               title: Text('Disposisi Keluar'),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(context, '/disposisiKeluar');
+                              },
                             ),
                           ],
                         ),
@@ -353,7 +356,7 @@ class MyHomePage extends StatelessWidget {
               ),
               title: Text('Agenda'),
               onTap: () {
-                // Tambahkan logika ketika menu 2 dipilih
+                Navigator.pushNamed(context, '/agenda');
               },
             ),
             ListTile(
@@ -364,18 +367,15 @@ class MyHomePage extends StatelessWidget {
               ),
               title: Text('help'),
               onTap: () {
-                // Tambahkan logika ketika menu 2 dipilih
+                Navigator.pushNamed(context, '/help');
               },
             ),
-            Container(
-              width: 2,
-              height: 50,
-              decoration:
-                  BoxDecoration(color: Color.fromARGB(255, 114, 127, 252)),
-              child: Center(
-                child: Text('logout'),
-              ),
-            )
+            ElevatedButton(
+              onPressed: (){
+                Navigator.pushNamed(context, '/');
+              },
+              child: const Text('logout'),
+            ),
           ],
         ),
       ),
