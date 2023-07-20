@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-class formDraftSuratextends StatelessWidget {
+class formDraftSurat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -10,7 +9,16 @@ class formDraftSuratextends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  String _selectedItem = 'Biasa'; // Initial selected item
+
+  List<String> _dropdownItems = ['Biasa', 'Menengah', 'Penting'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
