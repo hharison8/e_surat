@@ -13,7 +13,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  String _selectedItem = 'Biasa'; // Initial selected item
+
+  List<String> _dropdownItems = ['Biasa', 'Menengah', 'Penting'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -276,12 +285,27 @@ class MyHomePage extends StatelessWidget {
                 children: [
                   Container(
                       margin: EdgeInsets.all(8), child: Text('Kategori: ')),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      hintText: 'Input Kategori',
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    width: 340,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: DropdownButton<String>(
+                      value: _selectedItem,
+                      items: _dropdownItems.map((String item) {
+                    return DropdownMenuItem<String>(
+                       value: item,
+                       child: Text(item),
+                    );
+                    }).toList(),
+                    onChanged: (String? selectedItem) {
+                      setState(() {
+                        _selectedItem = selectedItem!;
+                    });
+                    },
                     ),
                   ),
                   Container(margin: EdgeInsets.all(8), child: Text('Kepada: ')),
@@ -313,20 +337,8 @@ class MyHomePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: Row(children: [
-                      Container(
-                        padding: EdgeInsets.all(13),
-                        height: 45,
-                        width: 85,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: const Color.fromARGB(255, 224, 224, 224),
-                        ),
-                        child: Text(
-                          'Pilih FIle',
-                          style: TextStyle(
-                              color: Colors.blue, fontWeight: FontWeight.bold),
-                        ),
-                      )
+                      ElevatedButton(onPressed: (){}, 
+                      child: Text('Pilih File'))
                     ]),
                   ),
                   Container(margin: EdgeInsets.all(8), child: Text('Nomor Surat: ')),
