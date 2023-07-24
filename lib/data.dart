@@ -14,6 +14,7 @@ class mydata extends DataTableSource{
     DataCell(Text(_data[index]['no'])),
     DataCell(Text(_data[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       itemBuilder: (context) => [
         const PopupMenuItem(
           value: 1,
