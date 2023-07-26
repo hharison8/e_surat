@@ -149,7 +149,6 @@ class pdfViewpengesahan extends StatelessWidget {
               },
             ),
             ListTile(
-              tileColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -161,6 +160,7 @@ class pdfViewpengesahan extends StatelessWidget {
               },
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -183,10 +183,11 @@ class pdfViewpengesahan extends StatelessWidget {
                       ),
                       Container(
                         height: 120,
-                        width: 150,
+                        width: 220,
                         child: Column(
                           children: [
                             ListTile(
+                              tileColor: Color.fromARGB(255, 224, 243, 255),
                               title: Text('Pengesahan'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/pengesahan');
