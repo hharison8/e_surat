@@ -13,11 +13,12 @@ import 'package:flutter_application_1/profil.dart';
 import 'package:flutter_application_1/recheck.dart';
 import 'package:flutter_application_1/surat_keluar.dart';
 import 'package:flutter_application_1/surat_masuk.dart';
+import 'package:flutter_application_1/surat_manual.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // jika ingin mengirim argument
-    // final args = settings.arguments; 
+    // final args = settings.arguments;
 
     switch (settings.name) {
       case '/':
@@ -39,17 +40,19 @@ class RouteGenerator {
       case '/suratKeluar':
         return MaterialPageRoute(builder: (_) => suratKeluar());
       case '/recheck':
-        return MaterialPageRoute(builder: (_) => recheck());  
+        return MaterialPageRoute(builder: (_) => recheck());
       case '/draftSurat':
-        return MaterialPageRoute(builder: (_) => draftSurat());  
+        return MaterialPageRoute(builder: (_) => draftSurat());
       case '/disposisiMasuk':
-        return MaterialPageRoute(builder: (_) => disposisiMasuk());  
+        return MaterialPageRoute(builder: (_) => disposisiMasuk());
       case '/disposisiKeluar':
-        return MaterialPageRoute(builder: (_) => disposisiKeluar());  
+        return MaterialPageRoute(builder: (_) => disposisiKeluar());
       case '/agenda':
         return MaterialPageRoute(builder: (_) => agenda());
       case '/pdfView':
-        return MaterialPageRoute(builder: (_) => pdfView());  
+        return MaterialPageRoute(builder: (_) => pdfView());
+      case '/suratManual':
+        return MaterialPageRoute(builder: (_) => suratManual());
       default:
         return _errorRoute();
     }

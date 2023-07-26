@@ -322,8 +322,7 @@ class _suratMasukState extends State<suratMasuk> {
               SizedBox(height: 20.0),
               ElevatedButton(
                 onPressed: () {
-                  print(
-                      'surat dibuat!'); //nanti aksinya diganti jadi popup form dialog buat bikin surat
+                  Navigator.pushNamed(context, '/suratManual');
                 },
                 child: Text('+ Surat Manual'),
               ),
