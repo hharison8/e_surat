@@ -10,7 +10,7 @@ import 'package:flutter_application_1/main/login.dart';
 import 'package:flutter_application_1/disposisi/pdfdispmasuk.dart';
 import 'package:flutter_application_1/permohonan paraf/pdfview.dart';
 import 'package:flutter_application_1/surat masuk/pdfviewsuratmasuk.dart';
-import 'package:flutter_application_1/pengesahan.dart';
+import 'package:flutter_application_1/pengesahan/pengesahan.dart';
 import 'package:flutter_application_1/permohonan paraf/permohonan_paraf.dart';
 import 'package:flutter_application_1/profile/profil.dart';
 import 'package:flutter_application_1/pengesahan/recheck.dart';
