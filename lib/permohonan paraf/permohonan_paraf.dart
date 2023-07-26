@@ -369,6 +369,16 @@ class _ParafState extends State<Paraf> {
                   ),
                 )
               ),
+              SizedBox(
+                height: 50,
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: () {
+                  Navigator.pushNamed(context, '/pdfView');
+                  },
+                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
+                )
+              ),
             ],
           ),
         ),

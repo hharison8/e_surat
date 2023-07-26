@@ -376,7 +376,9 @@ class _suratMasukState extends State<suratMasuk> {
                         columns: const [
                           DataColumn(label: Text('no surat')),
                           DataColumn(label: Text('perihal')),
+                          DataColumn(label: Text('action')),
                         ],
+                        horizontalMargin: 10,
                         rowsPerPage: 5,
                       ),
                     ],

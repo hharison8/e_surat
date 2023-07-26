@@ -356,7 +356,9 @@ class _draftSuratState extends State<draftSurat> {
                         columns: const [
                           DataColumn(label: Text('no surat')),
                           DataColumn(label: Text('perihal')),
+                          DataColumn(label: Text('action')),
                         ],
+                        horizontalMargin: 10,
                         rowsPerPage: 5,
                       ),
                     ],

@@ -16,6 +16,8 @@ import 'package:flutter_application_1/profile/profil.dart';
 import 'package:flutter_application_1/pengesahan/recheck.dart';
 import 'package:flutter_application_1/surat keluar/surat_keluar.dart';
 import 'package:flutter_application_1/surat masuk/surat_masuk.dart';
+import 'package:flutter_application_1/pengesahan/pdfViewpengesahan.dart';
+import 'package:flutter_application_1/pengesahan/pdfViewrecheck.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -59,6 +61,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => pdfViewSuratMasuk());  
       case '/formDraftSurat':
         return MaterialPageRoute(builder: (_) => formDraftSurat());  
+      case '/pdfViewpengesahan':
+        return MaterialPageRoute(builder: (_) => pdfViewpengesahan());
+      case '/pdfViewrecheck':
+        return MaterialPageRoute(builder: (_) => pdfViewrecheck());
       default:
         return _errorRoute();
     }

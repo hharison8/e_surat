@@ -355,7 +355,9 @@ class _agendaState extends State<agenda> {
                         columns: const [
                           DataColumn(label: Text('no surat')),
                           DataColumn(label: Text('perihal')),
+                          DataColumn(label: Text('action')),
                         ],
+                        horizontalMargin: 10,
                         rowsPerPage: 5,
                       ),
                     ],

@@ -356,11 +356,23 @@ class _recheckState extends State<recheck> {
                         columns: const [
                           DataColumn(label: Text('no surat')),
                           DataColumn(label: Text('perihal')),
+                          DataColumn(label: Text('action')),
                         ],
+                        horizontalMargin: 10,
                         rowsPerPage: 5,
                       ),
                     ],
                   ),
+                )
+              ),
+              SizedBox(
+                height: 50,
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: () {
+                  Navigator.pushNamed(context, '/pdfViewrecheck');
+                  },
+                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
                 )
               ),
             ],
