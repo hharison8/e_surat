@@ -149,7 +149,6 @@ class pdfViewrecheck extends StatelessWidget {
               },
             ),
             ListTile(
-              tileColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -161,6 +160,7 @@ class pdfViewrecheck extends StatelessWidget {
               },
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -183,7 +183,7 @@ class pdfViewrecheck extends StatelessWidget {
                       ),
                       Container(
                         height: 120,
-                        width: 150,
+                        width: 220,
                         child: Column(
                           children: [
                             ListTile(
@@ -193,6 +193,7 @@ class pdfViewrecheck extends StatelessWidget {
                               },
                             ),
                             ListTile(
+                              tileColor: Color.fromARGB(255, 224, 243, 255),
                               title: Text('Recheck'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/recheck');
