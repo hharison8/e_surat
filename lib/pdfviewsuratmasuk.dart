@@ -21,27 +21,61 @@ void _showPopupAlert(BuildContext context) {
   );
 }
 
+
 void _showTextFieldAlert(BuildContext context) {
   TextEditingController textController1 = TextEditingController();
+  TextEditingController textController2 = TextEditingController();
+  TextEditingController textController3 = TextEditingController();
+  TextEditingController textController4 = TextEditingController();
 
   showDialog(
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Revisi'),
+        title: Text('Disposisikan'),
         content: Container(
-          width: MediaQuery.of(context).size.width *
-              0.8, // Adjust the width as needed
+          width: MediaQuery.of(context).size.width * 0.8, // Adjust the width as needed
           child: Column(
-            mainAxisSize:
-                MainAxisSize.min, // Ensures the dialog box takes minimum space
+            mainAxisSize: MainAxisSize.min, // Ensures the dialog box takes minimum space
             children: [
               Container(
                 padding: EdgeInsets.all(4),
+              child: TextField(
+                controller: textController1,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Nomor Surat',
+                ),
+              ),
+              ),
+              Container(
+                padding: EdgeInsets.all(4),
+              child: TextField(
+                controller: textController2,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Kepada',
+                ),
+              ),
+              ),
+              Container(
+                padding: EdgeInsets.all(4),
+              child: TextField(
+                controller: textController3,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Isi Singkat Surat',
+                ),
+                obscureText: true,
+              ),
+              ),
+              Container(
+                padding: EdgeInsets.all(4),
                 child: TextField(
-                  controller: textController1,
-                  decoration: const InputDecoration(
+                  controller: textController4,
+                  decoration: InputDecoration(
                     border: OutlineInputBorder(),
+                    labelText: 'Instruksi'
                   ),
                 ),
               ),
@@ -59,9 +93,15 @@ void _showTextFieldAlert(BuildContext context) {
             onPressed: () {
               // Access the entered values
               String value1 = textController1.text;
+              String value2 = textController2.text;
+              String value3 = textController3.text;
+              String value4 = textController4.text;
 
               // Process the values as needed
               print('Value 1: $value1');
+              print('Value 2: $value2');
+              print('Value 3: $value3');
+              print('Value 4: $value4');
 
               Navigator.of(context).pop();
               showDialog(
@@ -69,7 +109,7 @@ void _showTextFieldAlert(BuildContext context) {
                 builder: (BuildContext context) {
                   return AlertDialog(
                     title: Text('Sukses'),
-                    content: Text('Revisi dikirim'),
+                    content: Text('Berhasil Didisposisikan'),
                     actions: [
                       TextButton(
                         child: Text('OK'),
@@ -82,19 +122,19 @@ void _showTextFieldAlert(BuildContext context) {
                 },
               );
             },
-            icon: Icon(
-              Icons.save,
-              size: 24,
+              icon: Icon(
+                Icons.save,
+                size: 24,
+              ),
+              label: Text('Simpan'),
             ),
-            label: Text('Simpan'),
-          ),
         ],
       );
     },
   );
 }
 
-class pdfView extends StatelessWidget {
+class pdfViewSuratMasuk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,7 +144,7 @@ class pdfView extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Permohonan Paraf',
+          'Surat Masuk',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -149,7 +189,6 @@ class pdfView extends StatelessWidget {
               },
             ),
             ListTile(
-              tileColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -207,12 +246,13 @@ class pdfView extends StatelessWidget {
               ],
             ),
             ListTile(
+              tileColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
                 child: Image.asset('assets/suratMasuk.png'),
               ),
-              title: Text('Surat Masuk'),
+              title: const Text('Surat Masuk'),
               onTap: () {
                 Navigator.pushNamed(context, '/suratMasuk');
               },
@@ -298,8 +338,7 @@ class pdfView extends StatelessWidget {
                             ListTile(
                               title: Text('Disposisi Keluar'),
                               onTap: () {
-                                Navigator.pushNamed(
-                                    context, '/disposisiKeluar');
+                                Navigator.pushNamed(context, '/disposisiKeluar');
                               },
                             ),
                           ],
@@ -333,7 +372,7 @@ class pdfView extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              onPressed: () {
+              onPressed: (){
                 Navigator.pushNamed(context, '/');
               },
               child: const Text('logout'),
@@ -345,7 +384,8 @@ class pdfView extends StatelessWidget {
         child: Column(
           children: [
             Container(
-                margin: EdgeInsets.all(16),
+                margin: EdgeInsets.all(8),
+                padding: EdgeInsets.all(16),
                 child: const Center(
                   child: Text('Test/001',
                       style: TextStyle(
@@ -355,194 +395,181 @@ class pdfView extends StatelessWidget {
                       )),
                 )),
             Container(
-              width: 320,
-              height: 450,
+              margin: EdgeInsets.all(16),
+              width: 350,
+              height: 500,
               decoration: BoxDecoration(
                   border: Border.all(
                 color: Colors.grey,
-                width: 16.0,
+                width: 32.0,
               )),
               child: SfPdfViewer.asset('assets/sample.pdf'),
             ),
             Container(
-              width: 340,
-              height: 50,
-              padding: EdgeInsets.all(8),
-              child: ElevatedButton(
-                child: const Text('Detail Surat'),
-                onPressed: () {
-                  showModalBottomSheet(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return SingleChildScrollView(
-                            padding: EdgeInsets.all(16),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Sifat :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Biasa',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Tanggal Surat :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  '23/09/2023',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Perihal :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Test',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Tanggal Kegiatan :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  '23/09/2023',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Dari :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  '08.00.00',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Sampai :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  '11.00.00',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Tempat Kegiatan :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Test',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Container(
-                                child:Center( 
-                                  child: ElevatedButton.icon(
-                                    onPressed: (){},
-                                    icon: Icon(Icons.download),
-                                    label: Text('Unduh File')))
-                                ),
-                              ],
-                            ));
-                      });
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.grey),
-                ),
+              height: 20,
+              width: 350,
+            ),
+            Container(
+              padding: EdgeInsets.all(16),
+              width: 350,
+              height: 424,
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 223, 223, 223),
+              ),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Sifat :',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    'Biasa',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    'Tanggal Surat :',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    '23/09/2023',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    'Perihal :',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    'Test',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    'Tanggal Kegiatan :',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    '23/09/2023',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    'Dari :',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    '08.00.00',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    'Sampai :',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    '11.00.00',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    'Tempat Kegiatan :',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    'Test',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                ],
               ),
             ),
             Container(
-              width: 355,
+              width: 380,
               height: 100,
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 2),
               child: Row(
                 children: [
                   Container(
-                      height: 50,
-                      width: 140,
-                      child: ElevatedButton(
+                    height: 50,
+                    width: 120,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        _showTextFieldAlert(context);
+                      },
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.orange),
+                      ),
+                      icon: Icon(Icons.bookmark),
+                      label: Text(
+                        'Disposisikan',
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  Container(
+                    height: 50,
+                    width: 120,
+                    child: ElevatedButton.icon(
                         onPressed: () {
-                          _showTextFieldAlert(context);
                         },
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red),
-                        ),
-                        child: Text(
-                          'Revisi',
+                        icon: Icon(Icons.history),
+                        label: Text(
+                          'History Disposisi',
                           style: TextStyle(fontSize: 14),
-                        ),
-                      )),
+                        )),
+                  ),
                   Spacer(),
                   Container(
                       height: 50,
-                      width: 140,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          _showPopupAlert(context);
-                        },
-                        child: const Text(
-                          'Accept',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      )),
+                      width: 120,
+                      child: ElevatedButton.icon(
+                          onPressed: (){},
+                          icon: Icon(Icons.upload),
+                          label: Text('Upload Ulang'),
+                          style: ButtonStyle(
+                              backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.green),
+                      ),
+                  )),
                 ],
               ),
             )

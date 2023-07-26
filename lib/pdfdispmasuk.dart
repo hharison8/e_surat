@@ -94,7 +94,7 @@ void _showTextFieldAlert(BuildContext context) {
   );
 }
 
-class pdfView extends StatelessWidget {
+class pdfDispMasuk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,7 +104,7 @@ class pdfView extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Permohonan Paraf',
+          'Disposisi Masuk',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -149,7 +149,6 @@ class pdfView extends StatelessWidget {
               },
             ),
             ListTile(
-              tileColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -264,6 +263,7 @@ class pdfView extends StatelessWidget {
               ],
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -286,10 +286,11 @@ class pdfView extends StatelessWidget {
                       ),
                       Container(
                         height: 120,
-                        width: 150,
+                        width: 220,
                         child: Column(
                           children: [
                             ListTile(
+                              tileColor: Color.fromARGB(255, 224, 243, 255),
                               title: Text('Disposisi Masuk'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/disposisiMasuk');
