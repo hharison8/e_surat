@@ -5,6 +5,13 @@ class suratManual extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+class kategori {
+  int? id;
+  String? name;
+
+  kategori({this.id, this.name});
+}
+
 class _MyHomePageState extends State<suratManual> {
   kategori? selectedValue;
   List<kategori?> kat = [
@@ -454,11 +461,4 @@ class _MyHomePageState extends State<suratManual> {
           ),
         ));
   }
-}
-
-class kategori {
-  int? id;
-  String? name;
-
-  kategori({this.id, this.name});
 }
