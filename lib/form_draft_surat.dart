@@ -1,38 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/data.dart';
 
-List<DropdownMenuItem<String>> get dropdownItems{
-  List<DropdownMenuItem<String>> menuItems = [
-    const DropdownMenuItem(child: Text("Terverifikasi"),value: "Terverifikasi"),
-    const DropdownMenuItem(child: Text("Belum Terverifikasi"),value: "Belum Terverifikasi"),
-  ];
-  return menuItems;
-}
-
-class disposisiKeluar extends StatefulWidget {
+class formDraftSurat extends StatelessWidget {
   @override
-  State<disposisiKeluar> createState() => _disposisiKeluarState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
 }
 
-class _disposisiKeluarState extends State<disposisiKeluar> {
-  String dropdownValue = 'Belum Terverifikasi';
-  final DataTableSource _data = mydata();
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  String _selectedItem = 'Biasa'; // Initial selected item
+
+  List<String> _dropdownItems = ['Biasa', 'Menengah', 'Penting'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 239, 239, 239),
+      backgroundColor: Color.fromARGB(255, 239, 239, 239),
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Disposisi Keluar',
+          'Form Draft Surat',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
           ),
-        )
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -102,9 +103,9 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                         height: 120,
                         child: ColoredBox(color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                    SizedBox(
+                    Container(
                       height: 120,
-                      width: 220,
+                      width: 150,
                       child: Column(
                         children: [
                           ListTile(
@@ -139,6 +140,7 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
               },
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -158,7 +160,7 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                         height: 120,
                         child: ColoredBox(color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                    SizedBox(
+                    Container(
                       height: 120,
                       width: 220,
                       child: Column(
@@ -170,6 +172,7 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                             },
                           ),
                           ListTile( 
+                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Draft Surat'),
                             onTap: () {
                               Navigator.pushNamed(context, '/draftSurat');
@@ -184,7 +187,6 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
               ],
             ),
             ExpansionTile(
-              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -204,9 +206,9 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                         height: 120,
                         child: ColoredBox(color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                    SizedBox(
+                    Container(
                       height: 120,
-                      width: 220,
+                      width: 150,
                       child: Column(
                         children: [
                           ListTile(
@@ -216,7 +218,6 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                             },
                           ),
                           ListTile( 
-                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Disposisi Keluar'),
                             onTap: () {
                               Navigator.pushNamed(context, '/disposisiKeluar');
@@ -261,112 +262,159 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
           ],
         ),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.only(top: 24,left: 8,right: 8,bottom: 0),
-                width: 364,
-                height: 120,
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight: Radius.circular(8)),
-                ),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        child: const Text(
-                          'Status :',
-                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
-                          ),
-                      ),
-                      DropdownButtonFormField(
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Color.fromARGB(255, 179, 179, 179), width: 2),
-                            borderRadius: BorderRadius.circular(8)
-                          )
-                        ),
-                        value: dropdownValue,
-                        items: dropdownItems, 
-                        icon: Image.asset('assets/more.png'),
-                        onChanged: (String? newvalue) {
-                          setState(() {
-                            dropdownValue = newvalue!;
-                          });
-                        }
-                      ),
-                    ],
-                  ),
-                ),
+      body: SingleChildScrollView(
+          child: Center(
+        child: Column(
+          children: [
+            Container(
+              height: 1200,
+              width: 360,
+              padding: EdgeInsets.all(16),
+              margin: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
               ),
-              Container(
-                padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.only(top: 0,left: 8,right: 8,bottom: 0),
-                width: 364,
-                height: 80,
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  border: Border(
-                    top: BorderSide(
-                      color: Color.fromARGB(255, 179, 179, 179)
-                    )
-                  )
-                ),
-                child: const Align(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child:
-                        TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Search', 
-                            suffixIcon: Icon(Icons.search,color: Colors.black,)
-                          ),
-                        )
-                      ),
-                    ],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                      margin: EdgeInsets.all(8), child: Text('Kategori: ')),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    width: 340,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: DropdownButton<String>(
+                      value: _selectedItem,
+                      items: _dropdownItems.map((String item) {
+                    return DropdownMenuItem<String>(
+                       value: item,
+                       child: Text(item),
+                    );
+                    }).toList(),
+                    onChanged: (String? selectedItem) {
+                      setState(() {
+                        _selectedItem = selectedItem!;
+                    });
+                    },
+                    ),
                   ),
-                ),
-                
-              ),
-              Container(
-                padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.only(top: 0,left: 8,right: 8,bottom: 24),
-                width: 364,
-                height:400,
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8),bottomRight: Radius.circular(8)),
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Column(
-                    children: [
-                      PaginatedDataTable(
-                        source: _data,
-                        columns: const [
-                          DataColumn(label: Text('no surat')),
-                          DataColumn(label: Text('perihal')),
-                        ],
-                        rowsPerPage: 5,
+                  Container(margin: EdgeInsets.all(8), child: Text('Kepada: ')),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
-                    ],
+                      hintText: 'Input Penerima',
+                    ),
                   ),
-                )
+                  Container(
+                      margin: EdgeInsets.all(8), child: Text('Penanda Tangan')),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      hintText: 'Input Pengesah',
+                    ),
+                  ),
+                  Container(margin: EdgeInsets.all(8), child: Text('File')),
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    width: 340,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: Row(children: [
+                      ElevatedButton(onPressed: (){}, 
+                      child: Text('Pilih File'))
+                    ]),
+                  ),
+                  Container(margin: EdgeInsets.all(8), child: Text('Nomor Surat: ')),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
+                  Container(
+                      margin: EdgeInsets.all(8), child: Text('Tanggal Surat:')),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      hintText: 'dd/mm/yyyy',
+                    ),
+                  ),
+                  Container(margin: EdgeInsets.all(8), child: Text('Tempat Kegiatan: ')),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
+                  Container(
+                      margin: EdgeInsets.all(8), child: Text('Tanggal Kegiatan:')),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      hintText: 'dd/mm/yyyy',
+                    ),
+                  ),
+                  Container(margin: EdgeInsets.all(8), child: Text('Waktu Dari: ')),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      hintText: '--:--',
+                    ),
+                  ),
+                  Container(
+                      margin: EdgeInsets.all(8), child: Text('Waktu Sampai:')),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      hintText: '--:--',
+                    ),
+                  ),
+                  Container(
+                      margin: EdgeInsets.all(8), child: Text('Perihal:')),
+                  TextField(
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 70, horizontal: 20),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      )
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 60,
+                    padding: EdgeInsets.all(8),
+                    child: ElevatedButton(
+                        onPressed: (){},
+                        child: Text('Simpan'),
+                      ),
+                    ),
+                ],
               ),
-            ],
-          ),
+            )
+          ],
         ),
-      ),
+      )),
     );
   }
 }

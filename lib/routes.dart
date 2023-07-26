@@ -4,9 +4,12 @@ import 'package:flutter_application_1/dashboard.dart';
 import 'package:flutter_application_1/disposisi_keluar.dart';
 import 'package:flutter_application_1/disposisi_masuk.dart';
 import 'package:flutter_application_1/draft_surat.dart';
+import 'package:flutter_application_1/form_draft_surat.dart';
 import 'package:flutter_application_1/help.dart';
 import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/pdfdispmasuk.dart';
 import 'package:flutter_application_1/pdfview.dart';
+import 'package:flutter_application_1/pdfviewsuratmasuk.dart';
 import 'package:flutter_application_1/pengesahan.dart';
 import 'package:flutter_application_1/permohonan_paraf.dart';
 import 'package:flutter_application_1/profil.dart';
@@ -50,6 +53,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => agenda());
       case '/pdfView':
         return MaterialPageRoute(builder: (_) => pdfView());  
+      case '/pdfDispMasuk':
+        return MaterialPageRoute(builder: (_) => pdfDispMasuk());  
+      case '/pdfViewSuratMasuk':
+        return MaterialPageRoute(builder: (_) => pdfViewSuratMasuk());  
+      case '/formDraftSurat':
+        return MaterialPageRoute(builder: (_) => formDraftSurat());  
       default:
         return _errorRoute();
     }

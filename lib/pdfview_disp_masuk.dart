@@ -1,99 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-void _showPopupAlert(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text('Sukses'),
-        content: Text('Surat Diaccept'),
-        actions: [
-          TextButton(
-            child: Text('OK'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      );
-    },
-  );
-}
-
-void _showTextFieldAlert(BuildContext context) {
-  TextEditingController textController1 = TextEditingController();
-
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text('Revisi'),
-        content: Container(
-          width: MediaQuery.of(context).size.width *
-              0.8, // Adjust the width as needed
-          child: Column(
-            mainAxisSize:
-                MainAxisSize.min, // Ensures the dialog box takes minimum space
-            children: [
-              Container(
-                padding: EdgeInsets.all(4),
-                child: TextField(
-                  controller: textController1,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(
-            child: Text('Cancel'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          ElevatedButton.icon(
-            onPressed: () {
-              // Access the entered values
-              String value1 = textController1.text;
-
-              // Process the values as needed
-              print('Value 1: $value1');
-
-              Navigator.of(context).pop();
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    title: Text('Sukses'),
-                    content: Text('Revisi dikirim'),
-                    actions: [
-                      TextButton(
-                        child: Text('OK'),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-            icon: Icon(
-              Icons.save,
-              size: 24,
-            ),
-            label: Text('Simpan'),
-          ),
-        ],
-      );
-    },
-  );
-}
-
 class pdfView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -519,7 +426,6 @@ class pdfView extends StatelessWidget {
                       width: 140,
                       child: ElevatedButton(
                         onPressed: () {
-                          _showTextFieldAlert(context);
                         },
                         style: ButtonStyle(
                           backgroundColor:
@@ -536,7 +442,6 @@ class pdfView extends StatelessWidget {
                       width: 140,
                       child: ElevatedButton(
                         onPressed: () {
-                          _showPopupAlert(context);
                         },
                         child: const Text(
                           'Accept',
