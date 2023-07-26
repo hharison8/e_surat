@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/data.dart';
+import 'package:flutter_application_1/main/data.dart';
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
@@ -9,12 +9,12 @@ List<DropdownMenuItem<String>> get dropdownItems{
   return menuItems;
 }
 
-class suratKeluar extends StatefulWidget {
+class disposisiKeluar extends StatefulWidget {
   @override
-  State<suratKeluar> createState() => _suratKeluarState();
+  State<disposisiKeluar> createState() => _disposisiKeluarState();
 }
 
-class _suratKeluarState extends State<suratKeluar> {
+class _disposisiKeluarState extends State<disposisiKeluar> {
   String dropdownValue = 'Belum Terverifikasi';
   final DataTableSource _data = mydata();
 
@@ -27,7 +27,7 @@ class _suratKeluarState extends State<suratKeluar> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Surat Keluar',
+          'Disposisi Keluar',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -139,7 +139,6 @@ class _suratKeluarState extends State<suratKeluar> {
               },
             ),
             ExpansionTile(
-              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -165,7 +164,6 @@ class _suratKeluarState extends State<suratKeluar> {
                       child: Column(
                         children: [
                           ListTile(
-                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Surat Keluar'),
                             onTap: (){
                               Navigator.pushNamed(context, '/suratKeluar');
@@ -186,6 +184,7 @@ class _suratKeluarState extends State<suratKeluar> {
               ],
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -207,7 +206,7 @@ class _suratKeluarState extends State<suratKeluar> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 150,
+                      width: 220,
                       child: Column(
                         children: [
                           ListTile(
@@ -217,6 +216,7 @@ class _suratKeluarState extends State<suratKeluar> {
                             },
                           ),
                           ListTile( 
+                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Disposisi Keluar'),
                             onTap: () {
                               Navigator.pushNamed(context, '/disposisiKeluar');

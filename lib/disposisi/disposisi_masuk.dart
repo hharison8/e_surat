@@ -9,12 +9,12 @@ List<DropdownMenuItem<String>> get dropdownItems{
   return menuItems;
 }
 
-class Pengesahan extends StatefulWidget {
+class disposisiMasuk extends StatefulWidget {
   @override
-  State<Pengesahan> createState() => _PengesahanState();
+  State<disposisiMasuk> createState() => _disposisiMasukState();
 }
 
-class _PengesahanState extends State<Pengesahan> {
+class _disposisiMasukState extends State<disposisiMasuk> {
   String dropdownValue = 'Belum Terverifikasi';
   final DataTableSource _data = mydata();
 
@@ -27,7 +27,7 @@ class _PengesahanState extends State<Pengesahan> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Pengesahan',
+          'Disposisi Masuk',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -83,7 +83,6 @@ class _PengesahanState extends State<Pengesahan> {
               },
             ),
             ExpansionTile(
-              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -109,7 +108,6 @@ class _PengesahanState extends State<Pengesahan> {
                       child: Column(
                         children: [
                           ListTile(
-                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Pengesahan'),
                             onTap: (){
                               Navigator.pushNamed(context, '/pengesahan');
@@ -162,7 +160,7 @@ class _PengesahanState extends State<Pengesahan> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 150,
+                      width: 220,
                       child: Column(
                         children: [
                           ListTile(
@@ -186,6 +184,7 @@ class _PengesahanState extends State<Pengesahan> {
               ],
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -207,10 +206,11 @@ class _PengesahanState extends State<Pengesahan> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 150,
+                      width: 220,
                       child: Column(
                         children: [
                           ListTile(
+                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Disposisi Masuk'),
                             onTap: (){
                               Navigator.pushNamed(context, '/disposisiMasuk');
@@ -356,12 +356,21 @@ class _PengesahanState extends State<Pengesahan> {
                         columns: const [
                           DataColumn(label: Text('no surat')),
                           DataColumn(label: Text('perihal')),
-                          DataColumn(label: Text('action')),
                         ],
                         rowsPerPage: 5,
                       ),
                     ],
                   ),
+                )
+              ),
+              SizedBox(
+                height: 50,
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: () {
+                  Navigator.pushNamed(context, '/pdfDispMasuk');
+                  },
+                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
                 )
               ),
             ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/routes.dart';
+import 'package:flutter_application_1/main/routes.dart';
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,3 +12,4 @@ Future main() async{
 Future initialization(BuildContext? context) async {
   await Future.delayed(const Duration(seconds: 2));
 }
+

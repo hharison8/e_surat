@@ -1,5 +1,169 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/data.dart';
+import 'package:flutter_application_1/main/data.dart';
+
+void _showTextFieldAlert(BuildContext context) {
+  TextEditingController textController1 = TextEditingController();
+  TextEditingController textController2 = TextEditingController();
+  TextEditingController textController3 = TextEditingController();
+  TextEditingController textController4 = TextEditingController();
+  TextEditingController textController5 = TextEditingController();
+  TextEditingController textController6 = TextEditingController();
+  TextEditingController textController7 = TextEditingController();
+  TextEditingController textController8 = TextEditingController();
+
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Edit'),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max, // Ensures the dialog box takes minimum space
+            children: [
+              Container(
+                padding: EdgeInsets.all(4),
+              child: TextField(
+                controller: textController1,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Kategori',
+                ),
+              ),
+              ),
+              Container(
+                padding: EdgeInsets.all(4),
+              child: TextField(
+                controller: textController2,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Nomor Surat',
+                ),
+              ),
+              ),
+              Container(
+                padding: EdgeInsets.all(4),
+              child: TextField(
+                controller: textController3,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Tanggal Surat',
+                ),
+                obscureText: true,
+              ),
+              ),
+              Container(
+                padding: EdgeInsets.all(4),
+                child: TextField(
+                  controller: textController4,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Tempat Kegiatan'
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(4),
+              child: TextField(
+                controller: textController1,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Tanggal Kegiatan',
+                ),
+              ),
+              ),
+              Container(
+                padding: EdgeInsets.all(4),
+              child: TextField(
+                controller: textController1,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Waktu Dari',
+                ),
+              ),
+              ),
+              Container(
+                padding: EdgeInsets.all(4),
+              child: TextField(
+                controller: textController1,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Waktu Sampai',
+                ),
+              ),
+              ),
+              Container(
+                padding: EdgeInsets.all(4),
+                child: TextField(
+                  controller: textController8,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Perihal',
+                    contentPadding: EdgeInsets.symmetric(vertical: 70, horizontal: 20),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            child: Text('Cancel'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          ElevatedButton.icon(
+            onPressed: () {
+              // Access the entered values
+              String value1 = textController1.text;
+              String value2 = textController2.text;
+              String value3 = textController3.text;
+              String value4 = textController4.text;
+              String value5 = textController5.text;
+              String value6 = textController6.text;
+              String value7 = textController7.text;
+              String value8 = textController8.text;
+
+              // Process the values as needed
+              print('Value 1: $value1');
+              print('Value 2: $value2');
+              print('Value 3: $value3');
+              print('Value 4: $value4');
+              print('Value 5 : $value5');
+              print('Value 6 : $value6');
+              print('Value 7 : $value7');
+              print('Value 8 : $value8');
+
+              Navigator.of(context).pop();
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Sukses'),
+                    content: Text('Perubahan Disimpan'),
+                    actions: [
+                      TextButton(
+                        child: Text('OK'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+              icon: Icon(
+                Icons.save,
+                size: 24,
+              ),
+              label: Text('Simpan'),
+            ),
+        ],
+      );
+    },
+  );
+}
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
@@ -9,12 +173,12 @@ List<DropdownMenuItem<String>> get dropdownItems{
   return menuItems;
 }
 
-class agenda extends StatefulWidget {
+class draftSurat extends StatefulWidget {
   @override
-  State<agenda> createState() => _agendaState();
+  State<draftSurat> createState() => _draftSuratState();
 }
 
-class _agendaState extends State<agenda> {
+class _draftSuratState extends State<draftSurat> {
   String dropdownValue = 'Belum Terverifikasi';
   final DataTableSource _data = mydata();
 
@@ -27,7 +191,7 @@ class _agendaState extends State<agenda> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Agenda',
+          'Draft Surat',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -139,6 +303,7 @@ class _agendaState extends State<agenda> {
               },
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -160,7 +325,7 @@ class _agendaState extends State<agenda> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 150,
+                      width: 220,
                       child: Column(
                         children: [
                           ListTile(
@@ -170,6 +335,7 @@ class _agendaState extends State<agenda> {
                             },
                           ),
                           ListTile( 
+                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Draft Surat'),
                             onTap: () {
                               Navigator.pushNamed(context, '/draftSurat');
@@ -229,7 +395,6 @@ class _agendaState extends State<agenda> {
               ],
             ),
             ListTile(
-              tileColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -362,6 +527,24 @@ class _agendaState extends State<agenda> {
                   ),
                 )
               ),
+              SizedBox(
+                height: 50,
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: () {
+                  Navigator.pushNamed(context, '/formDraftSurat');
+                  },
+                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
+                )
+              ),
+              SizedBox(
+                height: 50,
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: (){
+                     _showTextFieldAlert(context);
+                  },
+                  child: Text('Edit', style: TextStyle(fontSize: 14)) ) ,)
             ],
           ),
         ),

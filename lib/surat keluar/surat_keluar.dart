@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/data.dart';
+import 'package:flutter_application_1/main/data.dart';
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
@@ -9,12 +9,12 @@ List<DropdownMenuItem<String>> get dropdownItems{
   return menuItems;
 }
 
-class disposisiMasuk extends StatefulWidget {
+class suratKeluar extends StatefulWidget {
   @override
-  State<disposisiMasuk> createState() => _disposisiMasukState();
+  State<suratKeluar> createState() => _suratKeluarState();
 }
 
-class _disposisiMasukState extends State<disposisiMasuk> {
+class _suratKeluarState extends State<suratKeluar> {
   String dropdownValue = 'Belum Terverifikasi';
   final DataTableSource _data = mydata();
 
@@ -27,7 +27,7 @@ class _disposisiMasukState extends State<disposisiMasuk> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Disposisi Masuk',
+          'Surat Keluar',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -139,6 +139,7 @@ class _disposisiMasukState extends State<disposisiMasuk> {
               },
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -164,6 +165,7 @@ class _disposisiMasukState extends State<disposisiMasuk> {
                       child: Column(
                         children: [
                           ListTile(
+                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Surat Keluar'),
                             onTap: (){
                               Navigator.pushNamed(context, '/suratKeluar');
@@ -184,7 +186,6 @@ class _disposisiMasukState extends State<disposisiMasuk> {
               ],
             ),
             ExpansionTile(
-              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -206,11 +207,10 @@ class _disposisiMasukState extends State<disposisiMasuk> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 220,
+                      width: 150,
                       child: Column(
                         children: [
                           ListTile(
-                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Disposisi Masuk'),
                             onTap: (){
                               Navigator.pushNamed(context, '/disposisiMasuk');
@@ -361,16 +361,6 @@ class _disposisiMasukState extends State<disposisiMasuk> {
                       ),
                     ],
                   ),
-                )
-              ),
-              SizedBox(
-                height: 50,
-                width: 140,
-                child: ElevatedButton(
-                  onPressed: () {
-                  Navigator.pushNamed(context, '/pdfDispMasuk');
-                  },
-                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
                 )
               ),
             ],
