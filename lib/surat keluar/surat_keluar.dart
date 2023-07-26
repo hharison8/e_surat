@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/data.dart';
+import 'package:flutter_application_1/main/data.dart';
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
@@ -9,12 +9,12 @@ List<DropdownMenuItem<String>> get dropdownItems{
   return menuItems;
 }
 
-class agenda extends StatefulWidget {
+class suratKeluar extends StatefulWidget {
   @override
-  State<agenda> createState() => _agendaState();
+  State<suratKeluar> createState() => _suratKeluarState();
 }
 
-class _agendaState extends State<agenda> {
+class _suratKeluarState extends State<suratKeluar> {
   String dropdownValue = 'Belum Terverifikasi';
   final DataTableSource _data = mydata();
 
@@ -27,7 +27,7 @@ class _agendaState extends State<agenda> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Agenda',
+          'Surat Keluar',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -139,6 +139,7 @@ class _agendaState extends State<agenda> {
               },
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -160,10 +161,11 @@ class _agendaState extends State<agenda> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 150,
+                      width: 220,
                       child: Column(
                         children: [
                           ListTile(
+                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Surat Keluar'),
                             onTap: (){
                               Navigator.pushNamed(context, '/suratKeluar');
@@ -229,7 +231,6 @@ class _agendaState extends State<agenda> {
               ],
             ),
             ListTile(
-              tileColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,

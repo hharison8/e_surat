@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/agenda.dart';
-import 'package:flutter_application_1/dashboard.dart';
-import 'package:flutter_application_1/disposisi_keluar.dart';
-import 'package:flutter_application_1/disposisi_masuk.dart';
-import 'package:flutter_application_1/draft_surat.dart';
-import 'package:flutter_application_1/form_draft_surat.dart';
-import 'package:flutter_application_1/help.dart';
-import 'package:flutter_application_1/login.dart';
-import 'package:flutter_application_1/pdfdispmasuk.dart';
-import 'package:flutter_application_1/pdfview.dart';
-import 'package:flutter_application_1/pdfviewsuratmasuk.dart';
+import 'package:flutter_application_1/agenda/agenda.dart';
+import 'package:flutter_application_1/dashboard/dashboard.dart';
+import 'package:flutter_application_1/disposisi/disposisi_keluar.dart';
+import 'package:flutter_application_1/disposisi/disposisi_masuk.dart';
+import 'package:flutter_application_1/surat keluar/draft_surat.dart';
+import 'package:flutter_application_1/surat keluar/form_draft_surat.dart';
+import 'package:flutter_application_1/help/help.dart';
+import 'package:flutter_application_1/main/login.dart';
+import 'package:flutter_application_1/disposisi/pdfdispmasuk.dart';
+import 'package:flutter_application_1/permohonan paraf/pdfview.dart';
+import 'package:flutter_application_1/surat masuk/pdfviewsuratmasuk.dart';
 import 'package:flutter_application_1/pengesahan.dart';
-import 'package:flutter_application_1/permohonan_paraf.dart';
-import 'package:flutter_application_1/profil.dart';
-import 'package:flutter_application_1/recheck.dart';
-import 'package:flutter_application_1/surat_keluar.dart';
-import 'package:flutter_application_1/surat_masuk.dart';
+import 'package:flutter_application_1/permohonan paraf/permohonan_paraf.dart';
+import 'package:flutter_application_1/profile/profil.dart';
+import 'package:flutter_application_1/pengesahan/recheck.dart';
+import 'package:flutter_application_1/surat keluar/surat_keluar.dart';
+import 'package:flutter_application_1/surat masuk/surat_masuk.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {

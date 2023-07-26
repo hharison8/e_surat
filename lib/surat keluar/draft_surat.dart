@@ -9,12 +9,12 @@ List<DropdownMenuItem<String>> get dropdownItems{
   return menuItems;
 }
 
-class Pengesahan extends StatefulWidget {
+class draftSurat extends StatefulWidget {
   @override
-  State<Pengesahan> createState() => _PengesahanState();
+  State<draftSurat> createState() => _draftSuratState();
 }
 
-class _PengesahanState extends State<Pengesahan> {
+class _draftSuratState extends State<draftSurat> {
   String dropdownValue = 'Belum Terverifikasi';
   final DataTableSource _data = mydata();
 
@@ -27,7 +27,7 @@ class _PengesahanState extends State<Pengesahan> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Pengesahan',
+          'Draft Surat',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -83,7 +83,6 @@ class _PengesahanState extends State<Pengesahan> {
               },
             ),
             ExpansionTile(
-              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -109,7 +108,6 @@ class _PengesahanState extends State<Pengesahan> {
                       child: Column(
                         children: [
                           ListTile(
-                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Pengesahan'),
                             onTap: (){
                               Navigator.pushNamed(context, '/pengesahan');
@@ -141,6 +139,7 @@ class _PengesahanState extends State<Pengesahan> {
               },
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -162,7 +161,7 @@ class _PengesahanState extends State<Pengesahan> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 150,
+                      width: 220,
                       child: Column(
                         children: [
                           ListTile(
@@ -172,6 +171,7 @@ class _PengesahanState extends State<Pengesahan> {
                             },
                           ),
                           ListTile( 
+                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Draft Surat'),
                             onTap: () {
                               Navigator.pushNamed(context, '/draftSurat');
@@ -356,12 +356,21 @@ class _PengesahanState extends State<Pengesahan> {
                         columns: const [
                           DataColumn(label: Text('no surat')),
                           DataColumn(label: Text('perihal')),
-                          DataColumn(label: Text('action')),
                         ],
                         rowsPerPage: 5,
                       ),
                     ],
                   ),
+                )
+              ),
+              SizedBox(
+                height: 50,
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: () {
+                  Navigator.pushNamed(context, '/formDraftSurat');
+                  },
+                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
                 )
               ),
             ],

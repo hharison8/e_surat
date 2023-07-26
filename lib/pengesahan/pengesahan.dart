@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/data.dart';
+import 'package:flutter_application_1/main/data.dart';
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
@@ -9,12 +9,12 @@ List<DropdownMenuItem<String>> get dropdownItems{
   return menuItems;
 }
 
-class disposisiKeluar extends StatefulWidget {
+class Pengesahan extends StatefulWidget {
   @override
-  State<disposisiKeluar> createState() => _disposisiKeluarState();
+  State<Pengesahan> createState() => _PengesahanState();
 }
 
-class _disposisiKeluarState extends State<disposisiKeluar> {
+class _PengesahanState extends State<Pengesahan> {
   String dropdownValue = 'Belum Terverifikasi';
   final DataTableSource _data = mydata();
 
@@ -27,7 +27,7 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Disposisi Keluar',
+          'Pengesahan',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -83,6 +83,7 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
               },
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -108,6 +109,7 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                       child: Column(
                         children: [
                           ListTile(
+                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Pengesahan'),
                             onTap: (){
                               Navigator.pushNamed(context, '/pengesahan');
@@ -160,7 +162,7 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 220,
+                      width: 150,
                       child: Column(
                         children: [
                           ListTile(
@@ -184,7 +186,6 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
               ],
             ),
             ExpansionTile(
-              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -206,7 +207,7 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                       ),
                     SizedBox(
                       height: 120,
-                      width: 220,
+                      width: 150,
                       child: Column(
                         children: [
                           ListTile(
@@ -216,7 +217,6 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                             },
                           ),
                           ListTile( 
-                            tileColor: const Color.fromARGB(255, 224, 243, 255),
                             title: const Text('Disposisi Keluar'),
                             onTap: () {
                               Navigator.pushNamed(context, '/disposisiKeluar');

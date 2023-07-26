@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/routes.dart';
+import 'package:flutter_application_1/main/routes.dart';
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
