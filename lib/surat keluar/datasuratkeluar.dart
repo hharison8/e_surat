@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class mydata extends DataTableSource{
-  final List <Map<String,dynamic>> _data = List.generate(
+  final List <Map<String,dynamic>> _dataSuratkeluar = List.generate(
     200, 
     (index) => {
       'no': 'Test/ $index',
@@ -11,8 +11,8 @@ class mydata extends DataTableSource{
   @override
   DataRow? getRow(int index){
     return DataRow(cells: [
-    DataCell(Text(_data[index]['no'])),
-    DataCell(Text(_data[index]['perihal'])),
+    DataCell(Text(_dataSuratkeluar[index]['no'])),
+    DataCell(Text(_dataSuratkeluar[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       itemBuilder: (context) => [
@@ -42,7 +42,7 @@ class mydata extends DataTableSource{
               SizedBox(
                 width: 10,
               ),
-              Text("View Document")
+              Text("penerima")
             ],
           ),
         ),
@@ -61,6 +61,21 @@ class mydata extends DataTableSource{
             ],
           ),
         ),
+        const PopupMenuItem(
+          value: 4,
+          child: Row(
+            children: [
+              Icon(
+                Icons.delete_outline_outlined,
+                color: Colors.blue,
+                ),
+              SizedBox(
+                width: 10,
+              ),
+              Text("Hapus")
+            ],
+          ),
+        ),
       ],
       offset: Offset(0,35),
       elevation: 1,
@@ -72,6 +87,9 @@ class mydata extends DataTableSource{
 
         }
         else if (value == 3){
+          
+        }
+        else if (value == 4){
           
         }
       },
@@ -86,7 +104,7 @@ class mydata extends DataTableSource{
   bool get isRowCountApproximate => false;
 
   @override
-  int get rowCount => _data.length;
+  int get rowCount => _dataSuratkeluar.length;
 
   @override
   int get selectedRowCount => 0;

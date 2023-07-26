@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class mydata extends DataTableSource{
-  final List <Map<String,dynamic>> _data = List.generate(
+  final List <Map<String,dynamic>> _dataDisposisikeluar = List.generate(
     200, 
     (index) => {
       'no': 'Test/ $index',
@@ -11,28 +11,13 @@ class mydata extends DataTableSource{
   @override
   DataRow? getRow(int index){
     return DataRow(cells: [
-    DataCell(Text(_data[index]['no'])),
-    DataCell(Text(_data[index]['perihal'])),
+    DataCell(Text(_dataDisposisikeluar[index]['no'])),
+    DataCell(Text(_dataDisposisikeluar[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       itemBuilder: (context) => [
         const PopupMenuItem(
           value: 1,
-          child: Row(
-            children: [
-              Icon(
-                Icons.info_outline,
-                color: Colors.blue,
-                ),
-              SizedBox(
-                width: 10,
-              ),
-              Text("View Info")
-            ],
-          ),
-        ),
-        const PopupMenuItem(
-          value: 2,
           child: Row(
             children: [
               Icon(
@@ -42,12 +27,12 @@ class mydata extends DataTableSource{
               SizedBox(
                 width: 10,
               ),
-              Text("View Document")
+              Text("View")
             ],
           ),
         ),
         const PopupMenuItem(
-          value: 3,
+          value: 2,
           child: Row(
             children: [
               Icon(
@@ -58,6 +43,21 @@ class mydata extends DataTableSource{
                 width: 10,
               ),
               Text("Unduh")
+            ],
+          ),
+        ),
+        const PopupMenuItem(
+          value: 3,
+          child: Row(
+            children: [
+              Icon(
+                Icons.delete_outline_outlined,
+                color: Colors.blue,
+                ),
+              SizedBox(
+                width: 10,
+              ),
+              Text("Hapus")
             ],
           ),
         ),
@@ -86,7 +86,7 @@ class mydata extends DataTableSource{
   bool get isRowCountApproximate => false;
 
   @override
-  int get rowCount => _data.length;
+  int get rowCount => _dataDisposisikeluar.length;
 
   @override
   int get selectedRowCount => 0;

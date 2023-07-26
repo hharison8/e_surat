@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main/data.dart';
+import 'package:flutter_application_1/disposisi/datadisposisikeluar.dart';
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
@@ -16,7 +16,7 @@ class disposisiKeluar extends StatefulWidget {
 
 class _disposisiKeluarState extends State<disposisiKeluar> {
   String dropdownValue = 'Belum Terverifikasi';
-  final DataTableSource _data = mydata();
+  final DataTableSource _dataDisposisikeluar = mydata();
 
   @override
   Widget build(BuildContext context) {
@@ -352,7 +352,7 @@ class _disposisiKeluarState extends State<disposisiKeluar> {
                   child: Column(
                     children: [
                       PaginatedDataTable(
-                        source: _data,
+                        source: _dataDisposisikeluar,
                         columns: const [
                           DataColumn(label: Text('no surat')),
                           DataColumn(label: Text('perihal')),
