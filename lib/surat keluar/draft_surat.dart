@@ -1,6 +1,118 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/main/data.dart';
 
+void _showPenerimaAlert(BuildContext context) {
+
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Penerima'),
+        content: Container(
+          width: MediaQuery.of(context).size.width * 0.8, // Adjust the width as needed
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Ensures the dialog box takes minimum space
+            children: [
+              Container(
+                padding: const EdgeInsets.all(3),
+                child: const Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  'Nomor Surat',
+                  style: TextStyle(fontSize: 14),
+                    ),
+                ),
+              ),
+              Container(
+                width: 1000,
+                height: 60,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),border: Border.all(
+                  color: Colors.grey, width: 1.0,
+                )),
+                  child: const Row(
+                    children: [
+                      Text('   Test/001',style: TextStyle(fontSize: 16, color: Colors.black),),
+                    ],
+                  )
+              ),
+              Container(
+                padding: const EdgeInsets.all(3),
+                child: const Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  'Penerima',
+                  style: TextStyle(fontSize: 14),
+                    ),
+                ),
+              ),
+              Container(
+                width: 1000,
+                height: 60,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),color: Colors.grey,),
+                  child: const Row(
+                    children: [
+                      Text('   Dinas Kebudayaan',style: TextStyle(fontSize: 16, color: Colors.black),),
+                    ],
+                  )
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            child: const Text('OK'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+void _showPengesahAlert(BuildContext context) {
+
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Penerima'),
+        content: Container(
+          width: MediaQuery.of(context).size.width * 0.8, // Adjust the width as needed
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Ensures the dialog box takes minimum space
+            children: [
+              Container(
+                padding: const EdgeInsets.all(3),
+                child: const Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  'NAMA PENGESAH',
+                  style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),
+                    ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),color: Colors.blue),
+                child: const Align(alignment: Alignment.centerLeft,
+                child: Text('Belum',style: TextStyle(color: Colors.white),)
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            child: const Text('OK'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
 void _showTextFieldAlert(BuildContext context) {
   TextEditingController textController1 = TextEditingController();
   TextEditingController textController2 = TextEditingController();
@@ -549,7 +661,23 @@ class _draftSuratState extends State<draftSurat> {
                   onPressed: (){
                      _showTextFieldAlert(context);
                   },
-                  child: Text('Edit', style: TextStyle(fontSize: 14)) ) ,)
+                  child: Text('Edit', style: TextStyle(fontSize: 14)) ) ,),
+              SizedBox(
+                height: 50,
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: (){
+                     _showPenerimaAlert(context);
+                  },
+                  child: Text('Penerima', style: TextStyle(fontSize: 14)) ) ,),
+                  SizedBox(
+                height: 50,
+                width: 140,
+                child: ElevatedButton(
+                  onPressed: (){
+                     _showPengesahAlert(context);
+                  },
+                  child: Text('Pengesah', style: TextStyle(fontSize: 14)) ) ,),
             ],
           ),
         ),
