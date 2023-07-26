@@ -343,44 +343,32 @@ class _ParafState extends State<Paraf> {
                 ),
               ),
               Container(
-                  padding: const EdgeInsets.all(8),
-                  margin: const EdgeInsets.only(
-                      top: 0, left: 8, right: 8, bottom: 24),
-                  width: 364,
-                  height: 400,
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(8),
-                        bottomRight: Radius.circular(8)),
+                padding: const EdgeInsets.all(8),
+                margin: const EdgeInsets.only(top: 0,left: 8,right: 8,bottom: 24),
+                width: 364,
+                height:400,
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8),bottomRight: Radius.circular(8)),
+                ),
+                child: Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Column(
+                    children: [
+                      PaginatedDataTable(
+                        source: _data,
+                        columns: const [
+                          DataColumn(label: Text('no surat')),
+                          DataColumn(label: Text('perihal')),
+                          DataColumn(label: Text('action')),
+                        ],
+                        horizontalMargin: 10,
+                        rowsPerPage: 5,
+                      ),
+                    ],
                   ),
-                  child: Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Column(
-                      children: [
-                        PaginatedDataTable(
-                          source: _data,
-                          columns: [
-                            DataColumn(label: Text('no surat')),
-                            DataColumn(label: Text('perihal')),
-                          ],
-                          rowsPerPage: 5,
-                        ),
-                      ],
-                    ),
-                  )),
-              SizedBox(
-                  height: 50,
-                  width: 140,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/pdfView');
-                    },
-                    child: Text(
-                      'Accept',
-                      style: TextStyle(fontSize: 14),
-                    ),
-                  )),
+                )
+              ),
             ],
           ),
         ),
