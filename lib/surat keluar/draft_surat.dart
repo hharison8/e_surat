@@ -16,9 +16,11 @@ void _showTextFieldAlert(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         title: Text('Edit'),
-        content: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.max, // Ensures the dialog box takes minimum space
+        content: Container(
+          width: MediaQuery.of(context).size.width * 1, // 80% of the screen width
+          height: MediaQuery.of(context).size.height * 0.6,
+          child: SingleChildScrollView(
+            child: Column( // Ensures the dialog box takes minimum space
             children: [
               Container(
                 padding: EdgeInsets.all(4),
@@ -103,6 +105,7 @@ void _showTextFieldAlert(BuildContext context) {
                 ),
               ),
             ],
+          ),
           ),
         ),
         actions: [
