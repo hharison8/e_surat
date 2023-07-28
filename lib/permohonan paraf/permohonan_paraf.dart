@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main/data.dart';
+import 'package:flutter_application_1/main/dataperohonanparaf.dart';
 
 List<DropdownMenuItem<String>> get dropdownItems {
   List<DropdownMenuItem<String>> menuItems = [
@@ -358,11 +358,11 @@ class _ParafState extends State<Paraf> {
                       PaginatedDataTable(
                         source: _data,
                         columns: const [
-                          DataColumn(label: Text('no surat')),
+                          DataColumn(label: Text('dari')),
                           DataColumn(label: Text('perihal')),
                           DataColumn(label: Text('action')),
                         ],
-                        horizontalMargin: 10,
+                        horizontalMargin: 8,
                         rowsPerPage: 5,
                       ),
                     ],

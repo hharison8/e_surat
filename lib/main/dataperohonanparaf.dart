@@ -4,18 +4,18 @@ class mydata extends DataTableSource{
   final List <Map<String,dynamic>> _data = List.generate(
     200, 
     (index) => {
-      'no': 'Test/ $index',
+      'dari': 'dinas sosial',
       'perihal': 'Test app  $index',
     });
 
   @override
   DataRow? getRow(int index){
     return DataRow(cells: [
-    DataCell(Text(_data[index]['no'])),
+    DataCell(Text(_data[index]['dari'])),
     DataCell(Text(_data[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
-      itemBuilder: (context) => [
+      itemBuilder: (BuildContext context) => [
         const PopupMenuItem(
           value: 1,
           child: Row(

@@ -373,11 +373,11 @@ class _suratMasukState extends State<suratMasuk> {
                       PaginatedDataTable(
                         source: _dataSuratmasuk,
                         columns: const [
-                          DataColumn(label: Text('no surat')),
+                          DataColumn(label: Text('dari')),
                           DataColumn(label: Text('perihal')),
                           DataColumn(label: Text('action')),
                         ],
-                        horizontalMargin: 10,
+                        horizontalMargin: 8,
                         rowsPerPage: 5,
                       ),
                     ],

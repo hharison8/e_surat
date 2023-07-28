@@ -4,14 +4,14 @@ class mydata extends DataTableSource{
   final List <Map<String,dynamic>> _dataSuratmasuk = List.generate(
     200, 
     (index) => {
-      'no': 'Test/ $index',
+      'dari': 'dinas sosial',
       'perihal': 'Test app  $index',
     });
 
   @override
   DataRow? getRow(int index){
     return DataRow(cells: [
-    DataCell(Text(_dataSuratmasuk[index]['no'])),
+    DataCell(Text(_dataSuratmasuk[index]['dari'])),
     DataCell(Text(_dataSuratmasuk[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),

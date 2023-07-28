@@ -354,11 +354,11 @@ class _disposisiMasukState extends State<disposisiMasuk> {
                       PaginatedDataTable(
                         source: _dataDisposisimasuk,
                         columns: const [
-                          DataColumn(label: Text('no surat')),
+                          DataColumn(label: Text('dari')),
                           DataColumn(label: Text('perihal')),
                           DataColumn(label: Text('action')),
                         ],
-                        horizontalMargin: 10,
+                        horizontalMargin: 8,
                         rowsPerPage: 5,
                       ),
                     ],
