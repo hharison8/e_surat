@@ -357,16 +357,12 @@ class profil extends StatelessWidget {
                 Navigator.pushNamed(context, '/help');
               },
             ),
-            Container(
-              width: 2,
-              height: 50,
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 114, 127, 252)
-              ),
-              child: const Center(
-                child: Text('logout'),
-              ),
-            )
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/');
+              },
+              child: const Text('logout'),
+            ),
           ],
         ),
       ),

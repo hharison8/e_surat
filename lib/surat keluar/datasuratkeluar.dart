@@ -1,5 +1,74 @@
 import 'package:flutter/material.dart';
 
+void _showPenerimaAlert(BuildContext context) {
+
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Penerima'),
+        content: Container(
+          width: MediaQuery.of(context).size.width * 0.8, // Adjust the width as needed
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Ensures the dialog box takes minimum space
+            children: [
+              Container(
+                padding: const EdgeInsets.all(3),
+                child: const Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  'Nomor Surat',
+                  style: TextStyle(fontSize: 14),
+                    ),
+                ),
+              ),
+              Container(
+                width: 1000,
+                height: 60,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),border: Border.all(
+                  color: Colors.grey, width: 1.0,
+                )),
+                  child: const Row(
+                    children: [
+                      Text('   Test/001',style: TextStyle(fontSize: 16, color: Colors.black),),
+                    ],
+                  )
+              ),
+              Container(
+                padding: const EdgeInsets.all(3),
+                child: const Align(alignment: Alignment.centerLeft,
+                child: Text(
+                  'Penerima',
+                  style: TextStyle(fontSize: 14),
+                    ),
+                ),
+              ),
+              Container(
+                width: 1000,
+                height: 60,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),color: Colors.grey,),
+                  child: const Row(
+                    children: [
+                      Text('   Dinas Kebudayaan',style: TextStyle(fontSize: 16, color: Colors.black),),
+                    ],
+                  )
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            child: const Text('OK'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+
 class mydata extends DataTableSource{
   final List <Map<String,dynamic>> _dataSuratkeluar = List.generate(
     200, 
@@ -41,18 +110,28 @@ class mydata extends DataTableSource{
             ],
           ),
         ),
-        const PopupMenuItem(
+        PopupMenuItem(
           value: 2,
           child: Row(
             children: [
-              Icon(
-                Icons.remove_red_eye_outlined,
-                color: Colors.blue,
-                ),
-              SizedBox(
-                width: 10,
+              GestureDetector(
+                onTap: (){
+                    _showPenerimaAlert(ctx);
+                  },
+                child: 
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.remove_red_eye_sharp,
+                        color: Colors.blue,
+                        ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Penerima")
+                    ],
+                  ),
               ),
-              Text("penerima")
             ],
           ),
         ),

@@ -22,7 +22,7 @@ class mydata extends DataTableSource{
             children: [
               GestureDetector(
                 onTap: (){
-                    Navigator.pushNamed(ctx, '/pdfViewsuratmasuk');
+                    Navigator.pushNamed(ctx, '/pdfViewSuratMasuk');
                   },
                 child: 
                   Row(
@@ -74,19 +74,7 @@ class mydata extends DataTableSource{
       ],
       offset: Offset(0,35),
       elevation: 1,
-      onSelected: (value){
-        if (value == 1){
-          
-        }
-        else if (value == 2){
-
-        }
-        else if (value == 3){
-          
-        }
-      },
     )
-
     )
     ]);
   }
