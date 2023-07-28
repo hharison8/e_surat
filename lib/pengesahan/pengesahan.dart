@@ -365,16 +365,6 @@ class _PengesahanState extends State<Pengesahan> {
                   ),
                 )
               ),
-              SizedBox(
-                height: 50,
-                width: 140,
-                child: ElevatedButton(
-                  onPressed: () {
-                  Navigator.pushNamed(context, '/pdfViewpengesahan');
-                  },
-                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
-                )
-              ),
             ],
           ),
         ),

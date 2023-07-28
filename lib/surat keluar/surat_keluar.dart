@@ -433,22 +433,6 @@ class _suratKeluarState extends State<suratKeluar> {
                   ),
                 )
               ),
-              SizedBox(
-                height: 50,
-                width: 140,
-                child: ElevatedButton(
-                  onPressed: (){
-                     _showPenerimaAlert(context);
-                  },
-                  child: Text('Penerima', style: TextStyle(fontSize: 14)) ) ,),
-              SizedBox(
-                height: 50,
-                width: 140,
-                child: ElevatedButton(
-                  onPressed: (){
-                     Navigator.pushNamed(context, '/pdfview_suratkeluar');
-                  },
-                  child: Text('info', style: TextStyle(fontSize: 14)) ) ,),
             ],
           ),
         ),

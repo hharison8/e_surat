@@ -634,40 +634,6 @@ class _draftSuratState extends State<draftSurat> {
                   ),
                 )
               ),
-              SizedBox(
-                height: 50,
-                width: 140,
-                child: ElevatedButton(
-                  onPressed: () {
-                  Navigator.pushNamed(context, '/formDraftSurat');
-                  },
-                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
-                )
-              ),
-              SizedBox(
-                height: 50,
-                width: 140,
-                child: ElevatedButton(
-                  onPressed: (){
-                     _showTextFieldAlert(context);
-                  },
-                  child: Text('Edit', style: TextStyle(fontSize: 14)) ) ,),
-              SizedBox(
-                height: 50,
-                width: 140,
-                child: ElevatedButton(
-                  onPressed: (){
-                     _showPenerimaAlert(context);
-                  },
-                  child: Text('Penerima', style: TextStyle(fontSize: 14)) ) ,),
-                  SizedBox(
-                height: 50,
-                width: 140,
-                child: ElevatedButton(
-                  onPressed: (){
-                     _showPengesahAlert(context);
-                  },
-                  child: Text('Pengesah', style: TextStyle(fontSize: 14)) ) ,),
             ],
           ),
         ),

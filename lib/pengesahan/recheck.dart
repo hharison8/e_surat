@@ -365,16 +365,6 @@ class _recheckState extends State<recheck> {
                   ),
                 )
               ),
-              SizedBox(
-                height: 50,
-                width: 140,
-                child: ElevatedButton(
-                  onPressed: () {
-                  Navigator.pushNamed(context, '/pdfViewrecheck');
-                  },
-                  child: Text('Accept', style: TextStyle(fontSize: 14),), 
-                )
-              ),
             ],
           ),
         ),
