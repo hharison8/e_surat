@@ -67,6 +67,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => pdfViewpengesahan());
       case '/pdfViewrecheck':
         return MaterialPageRoute(builder: (_) => pdfViewrecheck());
+      case '/suratManual':
+        return MaterialPageRoute(builder: (_) => suratManual());
+      case '/pdfview_suratkeluar':
+        return MaterialPageRoute(builder: (_) => pdfview_suratkeluar());
       default:
         return _errorRoute();
     }
