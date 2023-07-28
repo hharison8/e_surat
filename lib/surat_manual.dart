@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class suratManual extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _suratManualState createState() => _suratManualState();
 }
 
 class kategori {
@@ -12,7 +12,7 @@ class kategori {
   kategori({this.id, this.name});
 }
 
-class _MyHomePageState extends State<suratManual> {
+class _suratManualState extends State<suratManual> {
   kategori? selectedValue;
   List<kategori?> kat = [
     kategori(id: 1, name: "Biasa"),
