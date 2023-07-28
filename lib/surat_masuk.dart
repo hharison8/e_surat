@@ -72,7 +72,6 @@ class _suratMasukState extends State<suratMasuk> {
               },
             ),
             ListTile(
-              tileColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -130,6 +129,7 @@ class _suratMasukState extends State<suratMasuk> {
               ],
             ),
             ListTile(
+              tileColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -276,12 +276,12 @@ class _suratMasukState extends State<suratMasuk> {
             ),
           ),
           Transform.scale(
-            scale: 0.7,
+            scale: 0.9,
             child: DropdownButtonFormField(
               decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color.fromARGB(255, 179, 179, 179), width: 2),
+                          color: Color.fromARGB(255, 179, 179, 179), width: 3),
                       borderRadius: BorderRadius.circular(8))),
               value: dropdownValue,
               items: dropdownItems,

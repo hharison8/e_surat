@@ -144,6 +144,7 @@ class _suratManualState extends State<suratManual> {
                 ],
               ),
               ListTile(
+                tileColor: const Color.fromARGB(255, 224, 243, 255),
                 leading: SizedBox(
                   width: 40,
                   height: 40,
@@ -155,7 +156,6 @@ class _suratManualState extends State<suratManual> {
                 },
               ),
               ExpansionTile(
-                collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
                 leading: SizedBox(
                   width: 40,
                   height: 40,
@@ -287,7 +287,7 @@ class _suratManualState extends State<suratManual> {
             child: Column(
               children: [
                 Container(
-                  height: 1057,
+                  height: 1090,
                   width: 360,
                   padding: EdgeInsets.all(16),
                   margin: EdgeInsets.all(16),
@@ -437,7 +437,7 @@ class _suratManualState extends State<suratManual> {
                         child: Text("Perihal"),
                       ),
                       TextField(
-                        maxLines: 6,
+                        maxLines: 5,
                         decoration: InputDecoration(
                             hintText: "Maksimal 5 baris",
                             labelText: "Masukkan Perihal Surat",
