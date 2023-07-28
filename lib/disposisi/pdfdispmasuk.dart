@@ -7,86 +7,13 @@ void _showPopupAlert(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         title: Text('Sukses'),
-        content: Text('Surat Diaccept'),
+        content: Text('Data Disimpan'),
         actions: [
           TextButton(
             child: Text('OK'),
             onPressed: () {
               Navigator.of(context).pop();
             },
-          ),
-        ],
-      );
-    },
-  );
-}
-
-void _showTextFieldAlert(BuildContext context) {
-  TextEditingController textController1 = TextEditingController();
-
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text('Revisi'),
-        content: Container(
-          width: MediaQuery.of(context).size.width *
-              0.8, // Adjust the width as needed
-          child: Column(
-            mainAxisSize:
-                MainAxisSize.min, // Ensures the dialog box takes minimum space
-            children: [
-              Container(
-                padding: EdgeInsets.all(4),
-                child: TextField(
-                  controller: textController1,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(
-            child: Text('Cancel'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          ElevatedButton.icon(
-            onPressed: () {
-              // Access the entered values
-              String value1 = textController1.text;
-
-              // Process the values as needed
-              print('Value 1: $value1');
-
-              Navigator.of(context).pop();
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    title: Text('Sukses'),
-                    content: Text('Revisi dikirim'),
-                    actions: [
-                      TextButton(
-                        child: Text('OK'),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-            icon: Icon(
-              Icons.save,
-              size: 24,
-            ),
-            label: Text('Simpan'),
           ),
         ],
       );
@@ -381,7 +308,7 @@ class pdfDispMasuk extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Sifat :',
+                                  'Dari :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
@@ -390,14 +317,14 @@ class pdfDispMasuk extends StatelessWidget {
                                   height: 8.0,
                                 ),
                                 Text(
-                                  'Biasa',
+                                  'Test',
                                   style: TextStyle(fontSize: 14),
                                 ),
                                 SizedBox(
                                   height: 8.0,
                                 ),
                                 Text(
-                                  'Tanggal Surat :',
+                                  'Instruksi :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
@@ -406,7 +333,7 @@ class pdfDispMasuk extends StatelessWidget {
                                   height: 8.0,
                                 ),
                                 Text(
-                                  '23/09/2023',
+                                  'Test',
                                   style: TextStyle(fontSize: 14),
                                 ),
                                 SizedBox(
@@ -429,7 +356,7 @@ class pdfDispMasuk extends StatelessWidget {
                                   height: 8.0,
                                 ),
                                 Text(
-                                  'Tanggal Kegiatan :',
+                                  'Tanggal Disposisi :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
@@ -438,66 +365,45 @@ class pdfDispMasuk extends StatelessWidget {
                                   height: 8.0,
                                 ),
                                 Text(
-                                  '23/09/2023',
+                                  '23/09/2023 09:56:01',
                                   style: TextStyle(fontSize: 14),
                                 ),
                                 SizedBox(
                                   height: 8.0,
                                 ),
+                                
+                                SizedBox(
+                                  height: 8.0,
+                                ),
                                 Text(
-                                  'Dari :',
+                                  'Status :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
-                                  height: 8.0,
+                                TextField(
+                                  decoration: InputDecoration(border: OutlineInputBorder(),
+                                  hintText: 'Diproses',
+                                  ),
                                 ),
                                 Text(
-                                  '08.00.00',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Sampai :',
+                                  'Jawaban :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  '11.00.00',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Tempat Kegiatan :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Test',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
+                                TextField(
+                                  decoration: InputDecoration(border: OutlineInputBorder(),
+                                  ),
                                 ),
                                 Container(
                                 child:Center( 
                                   child: ElevatedButton.icon(
-                                    onPressed: (){},
-                                    icon: Icon(Icons.download),
-                                    label: Text('Unduh File')))
+                                    onPressed: (){
+                                      _showPopupAlert(context);
+                                    },
+                                    icon: Icon(Icons.save),
+                                    label: Text('Simpan')))
                                 ),
                               ],
                             ));
@@ -509,44 +415,6 @@ class pdfDispMasuk extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              width: 355,
-              height: 100,
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  Container(
-                      height: 50,
-                      width: 140,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          _showTextFieldAlert(context);
-                        },
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red),
-                        ),
-                        child: Text(
-                          'Revisi',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      )),
-                  Spacer(),
-                  Container(
-                      height: 50,
-                      width: 140,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          _showPopupAlert(context);
-                        },
-                        child: const Text(
-                          'Accept',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      )),
-                ],
-              ),
-            )
           ],
         ),
       ),

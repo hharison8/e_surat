@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class pdfView extends StatelessWidget {
+class pdfView_dispkeluar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +11,7 @@ class pdfView extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Permohonan Paraf',
+          'Disposisi Masuk',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
@@ -56,7 +56,6 @@ class pdfView extends StatelessWidget {
               },
             ),
             ListTile(
-              tileColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -171,6 +170,7 @@ class pdfView extends StatelessWidget {
               ],
             ),
             ExpansionTile(
+              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -193,10 +193,11 @@ class pdfView extends StatelessWidget {
                       ),
                       Container(
                         height: 120,
-                        width: 150,
+                        width: 220,
                         child: Column(
                           children: [
                             ListTile(
+                              tileColor: Color.fromARGB(255, 224, 243, 255),
                               title: Text('Disposisi Masuk'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/disposisiMasuk');
@@ -287,7 +288,7 @@ class pdfView extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Sifat :',
+                                  'Dari :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
@@ -296,14 +297,14 @@ class pdfView extends StatelessWidget {
                                   height: 8.0,
                                 ),
                                 Text(
-                                  'Biasa',
+                                  'test',
                                   style: TextStyle(fontSize: 14),
                                 ),
                                 SizedBox(
                                   height: 8.0,
                                 ),
                                 Text(
-                                  'Tanggal Surat :',
+                                  'Instruksi :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
@@ -312,7 +313,7 @@ class pdfView extends StatelessWidget {
                                   height: 8.0,
                                 ),
                                 Text(
-                                  '23/09/2023',
+                                  'test',
                                   style: TextStyle(fontSize: 14),
                                 ),
                                 SizedBox(
@@ -335,7 +336,7 @@ class pdfView extends StatelessWidget {
                                   height: 8.0,
                                 ),
                                 Text(
-                                  'Tanggal Kegiatan :',
+                                  'Tujuan :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
@@ -344,66 +345,20 @@ class pdfView extends StatelessWidget {
                                   height: 8.0,
                                 ),
                                 Text(
-                                  '23/09/2023',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
+                                  'Sekretaris Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Gianyar',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  'Dari :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
+                                  'Tanggal : 2023-07-10 09:56:01',
+                                  style: TextStyle(fontSize: 14,),
                                 ),
                                 Text(
-                                  '08.00.00',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
+                                  'Status: Diproses',
+                                  style: TextStyle(fontSize: 14,),
                                 ),
                                 Text(
-                                  'Sampai :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  '11.00.00',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Tempat Kegiatan :',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Text(
-                                  'Test',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                SizedBox(
-                                  height: 8.0,
-                                ),
-                                Container(
-                                child:Center( 
-                                  child: ElevatedButton.icon(
-                                    onPressed: (){},
-                                    icon: Icon(Icons.download),
-                                    label: Text('Unduh File')))
+                                  'Jawaban: ',
+                                  style: TextStyle(fontSize: 14,),
                                 ),
                               ],
                             ));
@@ -415,42 +370,6 @@ class pdfView extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              width: 355,
-              height: 100,
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  Container(
-                      height: 50,
-                      width: 140,
-                      child: ElevatedButton(
-                        onPressed: () {
-                        },
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red),
-                        ),
-                        child: Text(
-                          'Revisi',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      )),
-                  Spacer(),
-                  Container(
-                      height: 50,
-                      width: 140,
-                      child: ElevatedButton(
-                        onPressed: () {
-                        },
-                        child: const Text(
-                          'Accept',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      )),
-                ],
-              ),
-            )
           ],
         ),
       ),
