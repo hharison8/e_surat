@@ -410,16 +410,21 @@ class pdfViewSuratMasuk extends StatelessWidget {
               width: 350,
             ),
             Container(
-              padding: EdgeInsets.all(16),
-              width: 350,
-              height: 424,
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 223, 223, 223),
-              ),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
+              width: 340,
+              height: 50,
+              padding: EdgeInsets.all(8),
+              child: ElevatedButton(
+                child: const Text('Detail Surat'),
+                onPressed: () {
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return SingleChildScrollView(
+                            padding: EdgeInsets.all(16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
                     'Sifat :',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
@@ -517,7 +522,14 @@ class pdfViewSuratMasuk extends StatelessWidget {
                   SizedBox(
                     height: 8.0,
                   ),
-                ],
+                              ],
+                            ));
+                      });
+                },
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.grey),
+                ),
               ),
             ),
             Container(

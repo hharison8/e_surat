@@ -11,7 +11,7 @@ class pdfview_suratkeluar extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Permohonan Paraf',
+          'Surat Keluar',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,

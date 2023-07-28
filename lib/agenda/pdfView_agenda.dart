@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class pdfView_dispkeluar extends StatelessWidget {
+class pdfView_agenda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +11,7 @@ class pdfView_dispkeluar extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
-          'Disposisi Keluar',
+          'Agenda',
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,

@@ -21,6 +21,7 @@ import 'package:flutter_application_1/pengesahan/pdfViewrecheck.dart';
 import 'package:flutter_application_1/surat masuk/surat_manual.dart';
 import 'package:flutter_application_1/surat keluar/pdfview_suratkeluar.dart';
 import 'package:flutter_application_1/disposisi/pdfview_disp_keluar.dart';
+import 'package:flutter_application_1/agenda/pdfView_agenda.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -74,6 +75,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => pdfview_suratkeluar());
       case '/pdfview_dispkeluar':
         return MaterialPageRoute(builder: (_) => pdfView_dispkeluar());
+        case '/pdfView_agenda':
+        return MaterialPageRoute(builder: (_) => pdfView_agenda());
       default:
         return _errorRoute();
     }
