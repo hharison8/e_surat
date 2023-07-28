@@ -15,19 +15,29 @@ class mydata extends DataTableSource{
     DataCell(Text(_dataDisposisikeluar[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
-      itemBuilder: (context) => [
-        const PopupMenuItem(
+      itemBuilder: (BuildContext ctx) => [
+        PopupMenuItem(
           value: 1,
           child: Row(
             children: [
-              Icon(
-                Icons.remove_red_eye_outlined,
-                color: Colors.blue,
-                ),
-              SizedBox(
-                width: 10,
+              GestureDetector(
+                onTap: (){
+                    Navigator.pushNamed(ctx, '/pdfview_dispkeluar');
+                  },
+                child: 
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.remove_red_eye_sharp,
+                        color: Colors.blue,
+                        ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("View")
+                    ],
+                  ),
               ),
-              Text("View")
             ],
           ),
         ),
@@ -64,19 +74,7 @@ class mydata extends DataTableSource{
       ],
       offset: Offset(0,35),
       elevation: 1,
-      onSelected: (value){
-        if (value == 1){
-          
-        }
-        else if (value == 2){
-
-        }
-        else if (value == 3){
-          
-        }
-      },
     )
-
     )
     ]);
   }

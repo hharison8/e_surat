@@ -197,13 +197,13 @@ class pdfView_dispkeluar extends StatelessWidget {
                         child: Column(
                           children: [
                             ListTile(
-                              tileColor: Color.fromARGB(255, 224, 243, 255),
                               title: Text('Disposisi Masuk'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/disposisiMasuk');
                               },
                             ),
                             ListTile(
+                              tileColor: Color.fromARGB(255, 224, 243, 255),
                               title: Text('Disposisi Keluar'),
                               onTap: () {
                                 Navigator.pushNamed(

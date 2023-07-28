@@ -15,19 +15,29 @@ class mydata extends DataTableSource{
     DataCell(Text(_dataPengesahan[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
-      itemBuilder: (context) => [
-        const PopupMenuItem(
+      itemBuilder: (BuildContext ctx) => [
+        PopupMenuItem(
           value: 1,
           child: Row(
             children: [
-              Icon(
-                Icons.info_outline,
-                color: Colors.blue,
-                ),
-              SizedBox(
-                width: 10,
+             GestureDetector(
+                onTap: (){
+                    Navigator.pushNamed(ctx, '/pdfViewpengesahan');
+                  },
+                child: 
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.info_outline,
+                        color: Colors.blue,
+                        ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("View Info")
+                    ],
+                  ),
               ),
-              Text("View Info")
             ],
           ),
         ),
@@ -79,22 +89,7 @@ class mydata extends DataTableSource{
       ],
       offset: Offset(0,35),
       elevation: 1,
-      onSelected: (value){
-        if (value == 1){
-          
-        }
-        else if (value == 2){
-
-        }
-        else if (value == 3){
-          
-        }
-        else if (value == 4){
-          
-        }
-      },
     )
-
     )
     ]);
   }

@@ -545,40 +545,30 @@ class _draftSuratState extends State<draftSurat> {
           child: Column(
             children: [
               Container(
-                padding: const EdgeInsets.all(8),
                 margin: const EdgeInsets.only(top: 24,left: 8,right: 8,bottom: 0),
                 width: 364,
-                height: 120,
+                height: 70,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight: Radius.circular(8)),
                 ),
                 child: Align(
-                  alignment: Alignment.center,
+                  alignment: Alignment.topCenter,
                   child: Column(
                     children: [
                       Container(
-                        margin: const EdgeInsets.all(8),
-                        child: const Text(
-                          'Status :',
-                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+                        color: Colors.white,
+                        width: 364,
+                        child:
+                            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                          SizedBox(height: 20.0),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/formDraftSurat');
+                            },
+                            child: Text('+ Tambah'),
                           ),
-                      ),
-                      DropdownButtonFormField(
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Color.fromARGB(255, 179, 179, 179), width: 2),
-                            borderRadius: BorderRadius.circular(8)
-                          )
-                        ),
-                        value: dropdownValue,
-                        items: dropdownItems, 
-                        icon: Image.asset('assets/more.png'),
-                        onChanged: (String? newvalue) {
-                          setState(() {
-                            dropdownValue = newvalue!;
-                          });
-                        }
+                        ]),
                       ),
                     ],
                   ),

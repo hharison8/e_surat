@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 
 class mydata extends DataTableSource{
-  final List <Map<String,dynamic>> _data = List.generate(
+  final List <Map<String,dynamic>> _dataRecheck = List.generate(
     200, 
     (index) => {
       'dari': 'dinas sosial',
       'perihal': 'Test app  $index',
-      
     });
 
   @override
   DataRow? getRow(int index){
     return DataRow(cells: [
-    DataCell(Text(_data[index]['dari'])),
-    DataCell(Text(_data[index]['perihal'])),
+    DataCell(Text(_dataRecheck[index]['dari'])),
+    DataCell(Text(_dataRecheck[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       itemBuilder: (BuildContext ctx) => [
@@ -23,7 +22,7 @@ class mydata extends DataTableSource{
             children: [
               GestureDetector(
                 onTap: (){
-                    Navigator.pushNamed(ctx, '/pdfView');
+                    Navigator.pushNamed(ctx, '/pdfViewrecheck');
                   },
                 child: 
                   Row(
@@ -85,7 +84,7 @@ class mydata extends DataTableSource{
   bool get isRowCountApproximate => false;
 
   @override
-  int get rowCount => _data.length;
+  int get rowCount => _dataRecheck.length;
 
   @override
   int get selectedRowCount => 0;

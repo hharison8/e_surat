@@ -56,9 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 40,
                 child: Image.asset('assets/dashboard.png'),
               ),
-              title: const Text('Dashboard'),
+              title: Text('Dashboard'),
               onTap: () {
-                Navigator.pushNamed(context, '/about');
+                Navigator.of(context, rootNavigator: true).pushNamed("/about");
               },
             ),
             ListTile(
@@ -67,9 +67,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 40,
                 child: Image.asset('assets/profil.png'),
               ),
-              title: const Text('Profil'),
+              title: Text('Profil'),
               onTap: () {
-                Navigator.pushNamed(context, '/profil');
+                Navigator.of(context, rootNavigator: true).pushNamed("/profil");
               },
             ),
             ListTile(
@@ -78,9 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 40,
                 child: Image.asset('assets/check.png'),
               ),
-              title: const Text('Permohonan Paraf'),
+              title: Text('Permohonan Paraf'),
               onTap: () {
-                Navigator.pushNamed(context, '/paraf');
+                Navigator.of(context, rootNavigator: true).pushNamed("/paraf");
               },
             ),
             ExpansionTile(
@@ -89,40 +89,41 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 40,
                 child: Image.asset('assets/check.png'),
               ),
-              title: const Text('Pengesahan'),
+              title: Text('Pengesahan'),
               children: [
                 Container(
                   height: 130,
                   width: 260,
-                  padding: const EdgeInsets.all(8),
-                  margin: const EdgeInsets.all(8),
+                  padding: EdgeInsets.all(8),
+                  margin: EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      const SizedBox(
+                      SizedBox(
                         width: 8,
                         height: 120,
-                        child: ColoredBox(color: Color.fromARGB(255, 224, 243, 255)),
+                        child: const ColoredBox(
+                            color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                    Container(
-                      height: 120,
-                      width: 150,
-                      child: Column(
-                        children: [
-                          ListTile(
-                            title: const Text('Pengesahan'),
-                            onTap: (){
-                              Navigator.pushNamed(context, '/pengesahan');
-                            },
-                          ),
-                          ListTile( 
-                            title: const Text('Recheck'),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/recheck');
-                            },
-                          ),
-                        ],
-                      ),
-                    )
+                      Container(
+                        height: 120,
+                        width: 150,
+                        child: Column(
+                          children: [
+                            ListTile(
+                              title: Text('Pengesahan'),
+                              onTap: () {
+                                Navigator.of(context, rootNavigator: true).pushNamed("/pengesahan");
+                              },
+                            ),
+                            ListTile(
+                              title: Text('Recheck'),
+                              onTap: () {
+                                Navigator.of(context, rootNavigator: true).pushNamed("/recheck");
+                              },
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 )
@@ -134,9 +135,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 40,
                 child: Image.asset('assets/suratMasuk.png'),
               ),
-              title: const Text('Surat Masuk'),
+              title: Text('Surat Masuk'),
               onTap: () {
-                Navigator.pushNamed(context, '/suratMasuk');
+                Navigator.of(context, rootNavigator: true).pushNamed("/suratMasuk");
               },
             ),
             ExpansionTile(
@@ -146,41 +147,42 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 40,
                 child: Image.asset('assets/suratKeluar.png'),
               ),
-              title: const Text('Surat Keluar'),
+              title: Text('Surat Keluar'),
               children: [
                 Container(
                   height: 130,
                   width: 260,
-                  padding: const EdgeInsets.all(8),
-                  margin: const EdgeInsets.all(8),
+                  padding: EdgeInsets.all(8),
+                  margin: EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      const SizedBox(
+                      SizedBox(
                         width: 8,
                         height: 120,
-                        child: ColoredBox(color: Color.fromARGB(255, 224, 243, 255)),
+                        child: const ColoredBox(
+                            color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                    Container(
-                      height: 120,
-                      width: 220,
-                      child: Column(
-                        children: [
-                          ListTile(
-                            title: const Text('Surat Keluar'),
-                            onTap: (){
-                              Navigator.pushNamed(context, '/suratKeluar');
-                            },
-                          ),
-                          ListTile( 
-                            tileColor: const Color.fromARGB(255, 224, 243, 255),
-                            title: const Text('Draft Surat'),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/draftSurat');
-                            },
-                          ),
-                        ],
-                      ),
-                    )
+                      Container(
+                        height: 120,
+                        width: 220,
+                        child: Column(
+                          children: [
+                            ListTile(
+                              title: Text('Surat Keluar'),
+                              onTap: () {
+                                Navigator.of(context, rootNavigator: true).pushNamed("/suratKeluar");
+                              },
+                            ),
+                            ListTile(
+                              tileColor: Color.fromARGB(255, 224, 243, 255),
+                              title: Text('Draft Surat'),
+                              onTap: () {
+                                Navigator.of(context, rootNavigator: true).pushNamed("/draftSurat");
+                              },
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 )
@@ -192,40 +194,41 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 40,
                 child: Image.asset('assets/disposisi.png'),
               ),
-              title: const Text('Disposisi'),
+              title: Text('Disposisi'),
               children: [
                 Container(
                   height: 130,
                   width: 260,
-                  padding: const EdgeInsets.all(8),
-                  margin: const EdgeInsets.all(8),
+                  padding: EdgeInsets.all(8),
+                  margin: EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      const SizedBox(
+                      SizedBox(
                         width: 8,
                         height: 120,
-                        child: ColoredBox(color: Color.fromARGB(255, 224, 243, 255)),
+                        child: const ColoredBox(
+                            color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                    Container(
-                      height: 120,
-                      width: 150,
-                      child: Column(
-                        children: [
-                          ListTile(
-                            title: const Text('Disposisi Masuk'),
-                            onTap: (){
-                              Navigator.pushNamed(context, '/disposisiMasuk');
-                            },
-                          ),
-                          ListTile( 
-                            title: const Text('Disposisi Keluar'),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/disposisiKeluar');
-                            },
-                          ),
-                        ],
-                      ),
-                    )
+                      Container(
+                        height: 120,
+                        width: 150,
+                        child: Column(
+                          children: [
+                            ListTile(
+                              title: Text('Disposisi Masuk'),
+                              onTap: () {
+                                Navigator.of(context, rootNavigator: true).pushNamed("/disposisiMasuk");
+                              },
+                            ),
+                            ListTile(
+                              title: Text('Disposisi Keluar'),
+                              onTap: () {
+                                Navigator.of(context, rootNavigator: true).pushNamed("/disposisiKeluar");
+                              },
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 )
@@ -237,9 +240,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 40,
                 child: Image.asset('assets/agenda.png'),
               ),
-              title: const Text('Agenda'),
+              title: Text('Agenda'),
               onTap: () {
-                Navigator.pushNamed(context, '/agenda');
+                Navigator.of(context, rootNavigator: true).pushNamed("/agenda");
               },
             ),
             ListTile(
@@ -248,14 +251,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 40,
                 child: Image.asset('assets/help.png'),
               ),
-              title: const Text('help'),
+              title: Text('help'),
               onTap: () {
-                Navigator.pushNamed(context, '/help');
+                Navigator.of(context, rootNavigator: true).pushNamed("/help");
               },
             ),
             ElevatedButton(
-              onPressed: (){
-                Navigator.pushNamed(context, '/');
+              onPressed: () {
+                Navigator.of(context, rootNavigator: true).pushNamed("/");
               },
               child: const Text('logout'),
             ),

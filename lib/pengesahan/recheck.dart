@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main/dataperohonanparaf.dart';
+import 'package:flutter_application_1/pengesahan/datarecheck.dart';
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
@@ -16,7 +16,7 @@ class recheck extends StatefulWidget {
 
 class _recheckState extends State<recheck> {
   String dropdownValue = 'Belum Terverifikasi';
-  final DataTableSource _data = mydata();
+  final DataTableSource _dataRecheck = mydata();
 
   @override
   Widget build(BuildContext context) {
@@ -352,7 +352,7 @@ class _recheckState extends State<recheck> {
                   child: Column(
                     children: [
                       PaginatedDataTable(
-                        source: _data,
+                        source: _dataRecheck,
                         columns: const [
                           DataColumn(label: Text('dari')),
                           DataColumn(label: Text('perihal')),
