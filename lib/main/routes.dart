@@ -18,6 +18,7 @@ import 'package:flutter_application_1/surat keluar/surat_keluar.dart';
 import 'package:flutter_application_1/surat masuk/surat_masuk.dart';
 import 'package:flutter_application_1/pengesahan/pdfViewpengesahan.dart';
 import 'package:flutter_application_1/pengesahan/pdfViewrecheck.dart';
+import 'package:flutter_application_1/surat masuk/surat_manual.dart';
 import 'package:flutter_application_1/surat keluar/pdfview_suratkeluar.dart';
 
 class RouteGenerator {
@@ -66,8 +67,6 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => pdfViewpengesahan());
       case '/pdfViewrecheck':
         return MaterialPageRoute(builder: (_) => pdfViewrecheck());
-      case '/pdfview_suratkeluar':
-        return MaterialPageRoute(builder: (_) => pdfview_suratkeluar());
       default:
         return _errorRoute();
     }

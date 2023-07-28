@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main/data.dart';
+import 'package:flutter_application_1/surat masuk/datasuratmasuk.dart';
 
 List<DropdownMenuItem<String>> get dropdownItems {
   List<DropdownMenuItem<String>> menuItems = [
@@ -18,7 +18,7 @@ class suratMasuk extends StatefulWidget {
 
 class _suratMasukState extends State<suratMasuk> {
   String dropdownValue = 'Belum Terverifikasi';
-  final DataTableSource _data = mydata();
+  final DataTableSource _dataSuratmasuk = mydata();
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,6 @@ class _suratMasukState extends State<suratMasuk> {
               },
             ),
             ListTile(
-              tileColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -131,6 +130,7 @@ class _suratMasukState extends State<suratMasuk> {
               ],
             ),
             ListTile(
+              tileColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -269,61 +269,60 @@ class _suratMasukState extends State<suratMasuk> {
           child: SingleChildScrollView(
               child: Column(
         children: [
-          // Container(
-          //   padding: const EdgeInsets.all(8),
-          //   margin:
-          //       const EdgeInsets.only(top: 24, left: 8, right: 8, bottom: 0),
-          //   width: 364,
-          //   height: 120,
-          //   decoration: const BoxDecoration(
-          //     color: Color.fromARGB(255, 255, 255, 255),
-          //     borderRadius: BorderRadius.only(
-          //         topLeft: Radius.circular(8), topRight: Radius.circular(8)),
-          //   ),
-          //   child: Align(
-          //     alignment: Alignment.center,
-          //     child: Column(
-          //       children: [
-          //         Container(
-          //           margin: const EdgeInsets.all(8),
-          //           child: const Text(
-          //             'Status Baca:',
-          //             style:
-          //                 TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          //           ),
-          //         ),
-          //         DropdownButtonFormField(
-          //             decoration: InputDecoration(
-          //                 enabledBorder: OutlineInputBorder(
-          //                     borderSide: const BorderSide(
-          //                         color: Color.fromARGB(255, 179, 179, 179),
-          //                         width: 2),
-          //                     borderRadius: BorderRadius.circular(8))),
-          //             value: dropdownValue,
-          //             items: dropdownItems,
-          //             icon: Image.asset('assets/more.png'),
-          //             onChanged: (String? newvalue) {
-          //               setState(() {
-          //                 dropdownValue = newvalue!;
-          //               });
-          //             }),
-          //       ],
-          //     ),
-          //   ),
-          // ),
           Container(
-            padding: EdgeInsets.only(top: 10, left: 8, right: 8, bottom: 15),
+            padding: const EdgeInsets.only(top: 8, left: 8,right: 8,bottom: 0),
+            margin:
+                const EdgeInsets.only(top: 24, left: 8, right: 8, bottom: 0),
+            width: 364,
+            height: 120,
+            decoration: const BoxDecoration(
+              color: Color.fromARGB(255, 255, 255, 255),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(8), topRight: Radius.circular(8)),
+            ),
+            child: Align(
+              alignment: Alignment.center,
+              child: Column(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(8),
+                    child: const Text(
+                      'Status Baca:',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                  ),
+                  DropdownButtonFormField(
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Color.fromARGB(255, 179, 179, 179),
+                                  width: 2),
+                              borderRadius: BorderRadius.circular(8))),
+                      value: dropdownValue,
+                      items: dropdownItems,
+                      icon: Image.asset('assets/more.png'),
+                      onChanged: (String? newvalue) {
+                        setState(() {
+                          dropdownValue = newvalue!;
+                        });
+                      }),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 0, left: 8, right: 8, bottom: 8),
             margin: EdgeInsets.only(top: 0, left: 8, right: 8, bottom: 0),
             color: Colors.white,
             width: 364,
-            height: 80,
+            height: 82,
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               SizedBox(height: 20.0),
               ElevatedButton(
                 onPressed: () {
-                  print(
-                      'surat dibuat!'); //nanti aksinya diganti jadi popup form dialog buat bikin surat
+                  Navigator.pushNamed(context, '/suratManual');
                 },
                 child: Text('+ Surat Manual'),
               ),
@@ -372,7 +371,7 @@ class _suratMasukState extends State<suratMasuk> {
                   child: Column(
                     children: [
                       PaginatedDataTable(
-                        source: _data,
+                        source: _dataSuratmasuk,
                         columns: const [
                           DataColumn(label: Text('no surat')),
                           DataColumn(label: Text('perihal')),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main/data.dart';
+import 'package:flutter_application_1/surat keluar/datasuratkeluar.dart';
 
 void _showPenerimaAlert(BuildContext context) {
 
@@ -84,7 +84,7 @@ class suratKeluar extends StatefulWidget {
 
 class _suratKeluarState extends State<suratKeluar> {
   String dropdownValue = 'Belum Terverifikasi';
-  final DataTableSource _data = mydata();
+  final DataTableSource _dataSuratkeluar = mydata();
 
   @override
   Widget build(BuildContext context) {
@@ -420,7 +420,7 @@ class _suratKeluarState extends State<suratKeluar> {
                   child: Column(
                     children: [
                       PaginatedDataTable(
-                        source: _data,
+                        source: _dataSuratkeluar,
                         columns: const [
                           DataColumn(label: Text('no surat')),
                           DataColumn(label: Text('perihal')),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main/data.dart';
+import 'package:flutter_application_1/agenda/dataagenda.dart';
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
@@ -16,7 +16,7 @@ class agenda extends StatefulWidget {
 
 class _agendaState extends State<agenda> {
   String dropdownValue = 'Belum Terverifikasi';
-  final DataTableSource _data = mydata();
+  final DataTableSource _dataAgenda = mydata();
 
   @override
   Widget build(BuildContext context) {
@@ -351,7 +351,7 @@ class _agendaState extends State<agenda> {
                   child: Column(
                     children: [
                       PaginatedDataTable(
-                        source: _data,
+                        source: _dataAgenda,
                         columns: const [
                           DataColumn(label: Text('no surat')),
                           DataColumn(label: Text('perihal')),
