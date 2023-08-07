@@ -374,7 +374,7 @@ class profil extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(16),
                 child:  const CircleAvatar(
-                  backgroundImage: AssetImage('assets/testo.jpg'),
+                  backgroundImage: AssetImage('assets/default_profile.jpg'),
                   radius: 50,
                 ),
               ),
@@ -385,7 +385,7 @@ class profil extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(3),
                       child: const Text(
-                        'ojan steve',
+                        'ojan',
                         style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
                       ),
                   ),
@@ -416,7 +416,7 @@ class profil extends StatelessWidget {
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),color: Colors.grey,),
                       child: const Row(
                         children: [
-                          Text('   OJAN STEVE',style: TextStyle(fontSize: 16, color: Colors.black),),
+                          Text('   OJAN ',style: TextStyle(fontSize: 16, color: Colors.black),),
                         ],
                       )
                     ),

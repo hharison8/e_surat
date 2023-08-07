@@ -170,7 +170,6 @@ class pdfView_agenda extends StatelessWidget {
               ],
             ),
             ExpansionTile(
-              collapsedBackgroundColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -188,37 +187,35 @@ class pdfView_agenda extends StatelessWidget {
                       const SizedBox(
                         width: 8,
                         height: 120,
-                        child: ColoredBox(
-                            color: Color.fromARGB(255, 224, 243, 255)),
+                        child: ColoredBox(color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                      Container(
-                        height: 120,
-                        width: 220,
-                        child: Column(
-                          children: [
-                            ListTile(
-                              tileColor: const Color.fromARGB(255, 224, 243, 255),
-                              title: const Text('Disposisi Masuk'),
-                              onTap: () {
-                                Navigator.pushNamed(context, '/disposisiMasuk');
-                              },
-                            ),
-                            ListTile(
-                              title: const Text('Disposisi Keluar'),
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, '/disposisiKeluar');
-                              },
-                            ),
-                          ],
-                        ),
-                      )
+                    SizedBox(
+                      height: 120,
+                      width: 150,
+                      child: Column(
+                        children: [
+                          ListTile(
+                            title: const Text('Disposisi Masuk'),
+                            onTap: (){
+                              Navigator.pushNamed(context, '/disposisiMasuk');
+                            },
+                          ),
+                          ListTile( 
+                            title: const Text('Disposisi Keluar'),
+                            onTap: () {
+                              Navigator.pushNamed(context, '/disposisiKeluar');
+                            },
+                          ),
+                        ],
+                      ),
+                    )
                     ],
                   ),
                 )
               ],
             ),
             ListTile(
+              tileColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
