@@ -29,10 +29,10 @@ class _MyHomePageState extends State<suratManual> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 239, 239, 239),
+        backgroundColor: const Color.fromARGB(255, 239, 239, 239),
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          iconTheme: const IconThemeData(color: Colors.black),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           centerTitle: true,
           title: const Text(
             'Surat Manual',
@@ -111,7 +111,7 @@ class _MyHomePageState extends State<suratManual> {
                           child: ColoredBox(
                               color: Color.fromARGB(255, 224, 243, 255)),
                         ),
-                        Container(
+                        SizedBox(
                           height: 120,
                           width: 150,
                           child: Column(
@@ -169,7 +169,7 @@ class _MyHomePageState extends State<suratManual> {
                           child: ColoredBox(
                               color: Color.fromARGB(255, 224, 243, 255)),
                         ),
-                        Container(
+                        SizedBox(
                           height: 120,
                           width: 220,
                           child: Column(
@@ -215,7 +215,7 @@ class _MyHomePageState extends State<suratManual> {
                           child: ColoredBox(
                               color: Color.fromARGB(255, 224, 243, 255)),
                         ),
-                        Container(
+                        SizedBox(
                           height: 120,
                           width: 150,
                           child: Column(
@@ -280,32 +280,32 @@ class _MyHomePageState extends State<suratManual> {
                 Container(
                   height: 1057,
                   width: 360,
-                  padding: EdgeInsets.all(16),
-                  margin: EdgeInsets.all(16),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(16),
+                  margin: const EdgeInsets.all(16),
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                          margin: EdgeInsets.all(8), child: Text("Kategori")),
+                          margin: const EdgeInsets.all(8), child: const Text("Kategori")),
                       Container(
-                          margin: EdgeInsets.all(3),
+                          margin: const EdgeInsets.all(3),
                           padding:
-                              EdgeInsets.symmetric(vertical: 5, horizontal: 19),
+                              const EdgeInsets.symmetric(vertical: 5, horizontal: 19),
                           decoration: BoxDecoration(
                               color: Colors.grey.shade200,
                               borderRadius: BorderRadius.circular(10.0)),
                           child: DropdownButton<kategori?>(
-                              hint: Text("Pilih Kategori"),
+                              hint: const Text("Pilih Kategori"),
                               value: selectedValue,
                               onChanged: (value) {
                                 setState(() {
                                   selectedValue = value;
                                 });
                               },
-                              underline: SizedBox(),
+                              underline: const SizedBox(),
                               isExpanded: true,
                               items: kat
                                   .map<DropdownMenuItem<kategori>>((e) =>
@@ -315,9 +315,9 @@ class _MyHomePageState extends State<suratManual> {
                                       ))
                                   .toList())),
                       Container(
-                          margin: EdgeInsets.all(8), child: Text("File Surat")),
+                          margin: const EdgeInsets.all(8), child: const Text("File Surat")),
                       Container(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         width: 340,
                         height: 60,
                         decoration: BoxDecoration(
@@ -326,12 +326,12 @@ class _MyHomePageState extends State<suratManual> {
                         ),
                         child: Row(children: [
                           ElevatedButton(
-                              onPressed: () {}, child: Text('Pilih File'))
+                              onPressed: () {}, child: const Text('Pilih File'))
                         ]),
                       ),
                       Container(
-                        margin: EdgeInsets.all(8),
-                        child: Text("Dari"),
+                        margin: const EdgeInsets.all(8),
+                        child: const Text("Dari"),
                       ),
                       TextField(
                         decoration: InputDecoration(
@@ -341,8 +341,8 @@ class _MyHomePageState extends State<suratManual> {
                                 borderRadius: BorderRadius.circular(10.0))),
                       ),
                       Container(
-                        margin: EdgeInsets.all(8),
-                        child: Text("Nomor Surat"),
+                        margin: const EdgeInsets.all(8),
+                        child: const Text("Nomor Surat"),
                       ),
                       TextField(
                         decoration: InputDecoration(
@@ -352,11 +352,11 @@ class _MyHomePageState extends State<suratManual> {
                                 borderRadius: BorderRadius.circular(10.0))),
                       ),
                       Container(
-                        margin: EdgeInsets.all(8),
-                        child: Text("Tanggal Surat"),
+                        margin: const EdgeInsets.all(8),
+                        child: const Text("Tanggal Surat"),
                       ),
                       Container(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         width: 340,
                         height: 60,
                         decoration: BoxDecoration(
@@ -365,7 +365,7 @@ class _MyHomePageState extends State<suratManual> {
                         ),
                         child: MaterialButton(
                             onPressed: _showDatePicker,
-                            child: Padding(
+                            child: const Padding(
                                 padding: EdgeInsets.all(8),
                                 child: Text('Pilih Tanggal',
                                     style: TextStyle(
@@ -373,8 +373,8 @@ class _MyHomePageState extends State<suratManual> {
                                         fontSize: 15)))),
                       ),
                       Container(
-                        margin: EdgeInsets.all(8),
-                        child: Text("Tempat Kegiatan"),
+                        margin: const EdgeInsets.all(8),
+                        child: const Text("Tempat Kegiatan"),
                       ),
                       TextField(
                         decoration: InputDecoration(
@@ -384,11 +384,11 @@ class _MyHomePageState extends State<suratManual> {
                                 borderRadius: BorderRadius.circular(10.0))),
                       ),
                       Container(
-                        margin: EdgeInsets.all(8),
-                        child: Text("Tanggal Kegiatan"),
+                        margin: const EdgeInsets.all(8),
+                        child: const Text("Tanggal Kegiatan"),
                       ),
                       Container(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         width: 340,
                         height: 60,
                         decoration: BoxDecoration(
@@ -397,7 +397,7 @@ class _MyHomePageState extends State<suratManual> {
                         ),
                         child: MaterialButton(
                             onPressed: _showDatePicker,
-                            child: Padding(
+                            child: const Padding(
                                 padding: EdgeInsets.all(8),
                                 child: Text('Pilih Tanggal',
                                     style: TextStyle(
@@ -405,7 +405,7 @@ class _MyHomePageState extends State<suratManual> {
                                         fontSize: 15)))),
                       ),
                       Container(
-                          margin: EdgeInsets.all(8), child: Text("Waktu Dari")),
+                          margin: const EdgeInsets.all(8), child: const Text("Waktu Dari")),
                       TextField(
                         decoration: InputDecoration(
                             hintText: "-- ; --",
@@ -414,8 +414,8 @@ class _MyHomePageState extends State<suratManual> {
                                 borderRadius: BorderRadius.circular(10.0))),
                       ),
                       Container(
-                          margin: EdgeInsets.all(8),
-                          child: Text("Waktu Sampai")),
+                          margin: const EdgeInsets.all(8),
+                          child: const Text("Waktu Sampai")),
                       TextField(
                         decoration: InputDecoration(
                             hintText: "-- ; --",
@@ -424,8 +424,8 @@ class _MyHomePageState extends State<suratManual> {
                                 borderRadius: BorderRadius.circular(10.0))),
                       ),
                       Container(
-                        margin: EdgeInsets.all(8),
-                        child: Text("Perihal"),
+                        margin: const EdgeInsets.all(8),
+                        child: const Text("Perihal"),
                       ),
                       TextField(
                         maxLines: 3,
@@ -437,10 +437,10 @@ class _MyHomePageState extends State<suratManual> {
                       Container(
                         width: 340,
                         height: 60,
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () {},
-                          child: Text('Simpan'),
+                          child: const Text('Simpan'),
                         ),
                       ),
                     ],

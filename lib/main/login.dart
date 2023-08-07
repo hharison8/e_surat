@@ -9,10 +9,10 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              SizedBox(height: 100),
+              const SizedBox(height: 100),
               Center(
                 child: Image.asset(
                   'assets/logo-app.png',
@@ -20,24 +20,24 @@ class LoginPage extends StatelessWidget {
                   height: 200,
                 ),
               ),
-              SizedBox(height: 8,),
+              const SizedBox(height: 8,),
               TextField(
                 controller: _usernameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'username',
                 ),
               ),
-              SizedBox(height: 8,),
+              const SizedBox(height: 8,),
               TextField(
                 controller: _passwordController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Password',
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 16,),
+              const SizedBox(height: 16,),
               ElevatedButton(
                 onPressed: () {
                   String username = _usernameController.text;
@@ -47,11 +47,11 @@ class LoginPage extends StatelessWidget {
                   print('Password: $password');
                   Navigator.pushNamed(context, '/about');
                 },
-                child: Text('Sign In'),
+                child: const Text('Sign In'),
               ),
-              SizedBox(height:8),
-                Text('Didukung oleh:',),
-              SizedBox(height: 8,),
+              const SizedBox(height:8),
+                const Text('Didukung oleh:',),
+              const SizedBox(height: 8,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -68,8 +68,8 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height:2),
-                Text('© 2023 Tim SPBE Kabupaten Gianyar',),
+              const SizedBox(height:2),
+                const Text('© 2023 Tim SPBE Kabupaten Gianyar',),
             ],
           ),
         ),

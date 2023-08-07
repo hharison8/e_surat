@@ -6,11 +6,11 @@ void _showPopupAlert(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Sukses'),
-        content: Text('Surat Diaccept'),
+        title: const Text('Sukses'),
+        content: const Text('Surat Diaccept'),
         actions: [
           TextButton(
-            child: Text('OK'),
+            child: const Text('OK'),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -32,37 +32,37 @@ void _showTextFieldAlert(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Disposisikan'),
-        content: Container(
+        title: const Text('Disposisikan'),
+        content: SizedBox(
           width: MediaQuery.of(context).size.width * 0.8, // Adjust the width as needed
           child: Column(
             mainAxisSize: MainAxisSize.min, // Ensures the dialog box takes minimum space
             children: [
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
               child: TextField(
                 controller: textController1,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Nomor Surat',
                 ),
               ),
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
               child: TextField(
                 controller: textController2,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Kepada',
                 ),
               ),
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
               child: TextField(
                 controller: textController3,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Isi Singkat Surat',
                 ),
@@ -70,10 +70,10 @@ void _showTextFieldAlert(BuildContext context) {
               ),
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
                 child: TextField(
                   controller: textController4,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Instruksi'
                   ),
@@ -84,7 +84,7 @@ void _showTextFieldAlert(BuildContext context) {
         ),
         actions: [
           TextButton(
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -108,11 +108,11 @@ void _showTextFieldAlert(BuildContext context) {
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
-                    title: Text('Sukses'),
-                    content: Text('Berhasil Didisposisikan'),
+                    title: const Text('Sukses'),
+                    content: const Text('Berhasil Didisposisikan'),
                     actions: [
                       TextButton(
-                        child: Text('OK'),
+                        child: const Text('OK'),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
@@ -122,11 +122,11 @@ void _showTextFieldAlert(BuildContext context) {
                 },
               );
             },
-              icon: Icon(
+              icon: const Icon(
                 Icons.save,
                 size: 24,
               ),
-              label: Text('Simpan'),
+              label: const Text('Simpan'),
             ),
         ],
       );
@@ -138,10 +138,10 @@ class pdfViewSuratMasuk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 239, 239, 239),
+      backgroundColor: const Color.fromARGB(255, 239, 239, 239),
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        iconTheme: const IconThemeData(color: Colors.black),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
           'Surat Masuk',
@@ -172,7 +172,7 @@ class pdfViewSuratMasuk extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/dashboard.png'),
               ),
-              title: Text('Dashboard'),
+              title: const Text('Dashboard'),
               onTap: () {
                 Navigator.pushNamed(context, '/about');
               },
@@ -183,7 +183,7 @@ class pdfViewSuratMasuk extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/profil.png'),
               ),
-              title: Text('Profil'),
+              title: const Text('Profil'),
               onTap: () {
                 Navigator.pushNamed(context, '/profil');
               },
@@ -194,7 +194,7 @@ class pdfViewSuratMasuk extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/check.png'),
               ),
-              title: Text('Permohonan Paraf'),
+              title: const Text('Permohonan Paraf'),
               onTap: () {
                 Navigator.pushNamed(context, '/paraf');
               },
@@ -205,34 +205,34 @@ class pdfViewSuratMasuk extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/check.png'),
               ),
-              title: Text('Pengesahan'),
+              title: const Text('Pengesahan'),
               children: [
                 Container(
                   height: 130,
                   width: 260,
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                         height: 120,
-                        child: const ColoredBox(
+                        child: ColoredBox(
                             color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                      Container(
+                      SizedBox(
                         height: 120,
                         width: 150,
                         child: Column(
                           children: [
                             ListTile(
-                              title: Text('Pengesahan'),
+                              title: const Text('Pengesahan'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/pengesahan');
                               },
                             ),
                             ListTile(
-                              title: Text('Recheck'),
+                              title: const Text('Recheck'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/recheck');
                               },
@@ -246,7 +246,7 @@ class pdfViewSuratMasuk extends StatelessWidget {
               ],
             ),
             ListTile(
-              tileColor: Color.fromARGB(255, 224, 243, 255),
+              tileColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -263,34 +263,34 @@ class pdfViewSuratMasuk extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/suratKeluar.png'),
               ),
-              title: Text('Surat Keluar'),
+              title: const Text('Surat Keluar'),
               children: [
                 Container(
                   height: 130,
                   width: 260,
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                         height: 120,
-                        child: const ColoredBox(
+                        child: ColoredBox(
                             color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                      Container(
+                      SizedBox(
                         height: 120,
                         width: 150,
                         child: Column(
                           children: [
                             ListTile(
-                              title: Text('Surat Keluar'),
+                              title: const Text('Surat Keluar'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/suratKeluar');
                               },
                             ),
                             ListTile(
-                              title: Text('Draft Surat'),
+                              title: const Text('Draft Surat'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/draftSurat');
                               },
@@ -309,34 +309,34 @@ class pdfViewSuratMasuk extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/disposisi.png'),
               ),
-              title: Text('Disposisi'),
+              title: const Text('Disposisi'),
               children: [
                 Container(
                   height: 130,
                   width: 260,
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                         height: 120,
-                        child: const ColoredBox(
+                        child: ColoredBox(
                             color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                      Container(
+                      SizedBox(
                         height: 120,
                         width: 150,
                         child: Column(
                           children: [
                             ListTile(
-                              title: Text('Disposisi Masuk'),
+                              title: const Text('Disposisi Masuk'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/disposisiMasuk');
                               },
                             ),
                             ListTile(
-                              title: Text('Disposisi Keluar'),
+                              title: const Text('Disposisi Keluar'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/disposisiKeluar');
                               },
@@ -355,7 +355,7 @@ class pdfViewSuratMasuk extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/agenda.png'),
               ),
-              title: Text('Agenda'),
+              title: const Text('Agenda'),
               onTap: () {
                 Navigator.pushNamed(context, '/agenda');
               },
@@ -366,7 +366,7 @@ class pdfViewSuratMasuk extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/help.png'),
               ),
-              title: Text('help'),
+              title: const Text('help'),
               onTap: () {
                 Navigator.pushNamed(context, '/help');
               },
@@ -384,8 +384,8 @@ class pdfViewSuratMasuk extends StatelessWidget {
         child: Column(
           children: [
             Container(
-                margin: EdgeInsets.all(8),
-                padding: EdgeInsets.all(16),
+                margin: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(16),
                 child: const Center(
                   child: Text('Test/001',
                       style: TextStyle(
@@ -395,7 +395,7 @@ class pdfViewSuratMasuk extends StatelessWidget {
                       )),
                 )),
             Container(
-              margin: EdgeInsets.all(16),
+              margin: const EdgeInsets.all(16),
               width: 350,
               height: 500,
               decoration: BoxDecoration(
@@ -405,21 +405,21 @@ class pdfViewSuratMasuk extends StatelessWidget {
               )),
               child: SfPdfViewer.asset('assets/sample.pdf'),
             ),
-            Container(
+            SizedBox(
               height: 20,
               width: 350,
             ),
             Container(
               width: 340,
               height: 50,
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 child: const Text('Detail Surat'),
                 onPressed: () {
                   showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {
-                        return SingleChildScrollView(
+                        return const SingleChildScrollView(
                             padding: EdgeInsets.all(16),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -535,10 +535,10 @@ class pdfViewSuratMasuk extends StatelessWidget {
             Container(
               width: 380,
               height: 100,
-              padding: EdgeInsets.symmetric(horizontal: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 2),
               child: Row(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 50,
                     width: 120,
                     child: ElevatedButton.icon(
@@ -549,34 +549,34 @@ class pdfViewSuratMasuk extends StatelessWidget {
                         backgroundColor:
                             MaterialStateProperty.all<Color>(Colors.orange),
                       ),
-                      icon: Icon(Icons.bookmark),
-                      label: Text(
+                      icon: const Icon(Icons.bookmark),
+                      label: const Text(
                         'Disposisikan',
                         style: TextStyle(fontSize: 14),
                       ),
                     ),
                   ),
-                  Spacer(),
-                  Container(
+                  const Spacer(),
+                  SizedBox(
                     height: 50,
                     width: 120,
                     child: ElevatedButton.icon(
                         onPressed: () {
                         },
-                        icon: Icon(Icons.history),
-                        label: Text(
+                        icon: const Icon(Icons.history),
+                        label: const Text(
                           'History Disposisi',
                           style: TextStyle(fontSize: 14),
                         )),
                   ),
-                  Spacer(),
-                  Container(
+                  const Spacer(),
+                  SizedBox(
                       height: 50,
                       width: 120,
                       child: ElevatedButton.icon(
                           onPressed: (){},
-                          icon: Icon(Icons.upload),
-                          label: Text('Upload Ulang'),
+                          icon: const Icon(Icons.upload),
+                          label: const Text('Upload Ulang'),
                           style: ButtonStyle(
                               backgroundColor:
                                 MaterialStateProperty.all<Color>(Colors.green),

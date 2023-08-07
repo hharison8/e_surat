@@ -14,7 +14,7 @@ class mydata extends DataTableSource{
     DataCell(Text(_dataAgenda[index]['dari'])),
     DataCell(Text(_dataAgenda[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       itemBuilder: (BuildContext ctx) => [
         PopupMenuItem(
           value: 1,
@@ -25,7 +25,7 @@ class mydata extends DataTableSource{
                     Navigator.pushNamed(ctx, '/pdfView_agenda');
                   },
                 child: 
-                  Row(
+                  const Row(
                     children: [
                       Icon(
                         Icons.remove_red_eye_sharp  ,
@@ -42,7 +42,7 @@ class mydata extends DataTableSource{
           ),
         ),
       ],
-      offset: Offset(0,35),
+      offset: const Offset(0,35),
       elevation: 1,
     )
     )

@@ -4,9 +4,11 @@ import 'package:flutter_application_1/surat masuk/datasuratmasuk.dart';
 List<DropdownMenuItem<String>> get dropdownItems {
   List<DropdownMenuItem<String>> menuItems = [
     const DropdownMenuItem(
-        child: Text("Terverifikasi"), value: "Terverifikasi"),
+        value: "Terverifikasi",
+        child: Text("Terverifikasi")),
     const DropdownMenuItem(
-        child: Text("Belum Terverifikasi"), value: "Belum Terverifikasi"),
+        value: "Belum Terverifikasi",
+        child: Text("Belum Terverifikasi")),
   ];
   return menuItems;
 }

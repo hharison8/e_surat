@@ -14,7 +14,7 @@ class mydata extends DataTableSource{
     DataCell(Text(_dataRecheck[index]['dari'])),
     DataCell(Text(_dataRecheck[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       itemBuilder: (BuildContext ctx) => [
         PopupMenuItem(
           value: 1,
@@ -25,7 +25,7 @@ class mydata extends DataTableSource{
                     Navigator.pushNamed(ctx, '/pdfViewrecheck');
                   },
                 child: 
-                  Row(
+                  const Row(
                     children: [
                       Icon(
                         Icons.info_outline,
@@ -72,7 +72,7 @@ class mydata extends DataTableSource{
           ),
         ),
       ],
-      offset: Offset(0,35),
+      offset: const Offset(0,35),
       elevation: 1,
     )
     )

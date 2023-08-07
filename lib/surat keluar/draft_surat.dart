@@ -8,7 +8,7 @@ void _showPenerimaAlert(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         title: const Text('Penerima'),
-        content: Container(
+        content: SizedBox(
           width: MediaQuery.of(context).size.width * 0.8, // Adjust the width as needed
           child: Column(
             mainAxisSize: MainAxisSize.min, // Ensures the dialog box takes minimum space
@@ -76,7 +76,7 @@ void _showPengesahAlert(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         title: const Text('Penerima'),
-        content: Container(
+        content: SizedBox(
           width: MediaQuery.of(context).size.width * 0.8, // Adjust the width as needed
           child: Column(
             mainAxisSize: MainAxisSize.min, // Ensures the dialog box takes minimum space
@@ -91,7 +91,7 @@ void _showPengesahAlert(BuildContext context) {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),color: Colors.blue),
                 child: const Align(alignment: Alignment.centerLeft,
                 child: Text('Belum',style: TextStyle(color: Colors.white),)
@@ -127,38 +127,38 @@ void _showTextFieldAlert(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Edit'),
-        content: Container(
+        title: const Text('Edit'),
+        content: SizedBox(
           width: MediaQuery.of(context).size.width * 1, // 80% of the screen width
           height: MediaQuery.of(context).size.height * 0.6,
           child: SingleChildScrollView(
             child: Column( // Ensures the dialog box takes minimum space
             children: [
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
               child: TextField(
                 controller: textController1,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Kategori',
                 ),
               ),
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
               child: TextField(
                 controller: textController2,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Nomor Surat',
                 ),
               ),
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
               child: TextField(
                 controller: textController3,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Tanggal Surat',
                 ),
@@ -166,50 +166,50 @@ void _showTextFieldAlert(BuildContext context) {
               ),
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
                 child: TextField(
                   controller: textController4,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Tempat Kegiatan'
                   ),
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
               child: TextField(
                 controller: textController1,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Tanggal Kegiatan',
                 ),
               ),
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
               child: TextField(
                 controller: textController1,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Waktu Dari',
                 ),
               ),
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
               child: TextField(
                 controller: textController1,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Waktu Sampai',
                 ),
               ),
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
                 child: TextField(
                   controller: textController8,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Perihal',
                     contentPadding: EdgeInsets.symmetric(vertical: 70, horizontal: 20),
@@ -222,7 +222,7 @@ void _showTextFieldAlert(BuildContext context) {
         ),
         actions: [
           TextButton(
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -254,11 +254,11 @@ void _showTextFieldAlert(BuildContext context) {
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
-                    title: Text('Sukses'),
-                    content: Text('Perubahan Disimpan'),
+                    title: const Text('Sukses'),
+                    content: const Text('Perubahan Disimpan'),
                     actions: [
                       TextButton(
-                        child: Text('OK'),
+                        child: const Text('OK'),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
@@ -268,11 +268,11 @@ void _showTextFieldAlert(BuildContext context) {
                 },
               );
             },
-              icon: Icon(
+              icon: const Icon(
                 Icons.save,
                 size: 24,
               ),
-              label: Text('Simpan'),
+              label: const Text('Simpan'),
             ),
         ],
       );
@@ -418,7 +418,7 @@ class _draftSuratState extends State<draftSurat> {
               },
             ),
             ExpansionTile(
-              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
+              collapsedBackgroundColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
@@ -561,12 +561,12 @@ class _draftSuratState extends State<draftSurat> {
                         width: 364,
                         child:
                             Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                          SizedBox(height: 20.0),
+                          const SizedBox(height: 20.0),
                           ElevatedButton(
                             onPressed: () {
                               Navigator.pushNamed(context, '/formDraftSurat');
                             },
-                            child: Text('+ Tambah'),
+                            child: const Text('+ Tambah'),
                           ),
                         ]),
                       ),

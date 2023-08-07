@@ -7,7 +7,7 @@ void _showPenerimaAlert(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         title: const Text('Penerima'),
-        content: Container(
+        content: SizedBox(
           width: MediaQuery.of(context).size.width * 0.8, // Adjust the width as needed
           child: Column(
             mainAxisSize: MainAxisSize.min, // Ensures the dialog box takes minimum space
@@ -83,7 +83,7 @@ class mydata extends DataTableSource{
     DataCell(Text(_dataSuratkeluar[index]['dari'])),
     DataCell(Text(_dataSuratkeluar[index]['perihal'])),
     DataCell(PopupMenuButton<int>(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       itemBuilder: (BuildContext ctx) => [
         PopupMenuItem(
           value: 1,
@@ -94,7 +94,7 @@ class mydata extends DataTableSource{
                     Navigator.pushNamed(ctx, '/pdfview_suratkeluar');
                   },
                 child: 
-                  Row(
+                  const Row(
                     children: [
                       Icon(
                         Icons.info_outline,
@@ -119,7 +119,7 @@ class mydata extends DataTableSource{
                     _showPenerimaAlert(ctx);
                   },
                 child: 
-                  Row(
+                  const Row(
                     children: [
                       Icon(
                         Icons.remove_red_eye_sharp,
@@ -166,7 +166,7 @@ class mydata extends DataTableSource{
           ),
         ),
       ],
-      offset: Offset(0,35),
+      offset: const Offset(0,35),
       elevation: 1,
       onSelected: (value){
         if (value == 1){

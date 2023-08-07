@@ -8,7 +8,7 @@ void _showPenerimaAlert(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         title: const Text('Penerima'),
-        content: Container(
+        content: SizedBox(
           width: MediaQuery.of(context).size.width * 0.8, // Adjust the width as needed
           child: Column(
             mainAxisSize: MainAxisSize.min, // Ensures the dialog box takes minimum space
@@ -71,8 +71,8 @@ void _showPenerimaAlert(BuildContext context) {
 
 List<DropdownMenuItem<String>> get dropdownItems{
   List<DropdownMenuItem<String>> menuItems = [
-    const DropdownMenuItem(child: Text("Terverifikasi"),value: "Terverifikasi"),
-    const DropdownMenuItem(child: Text("Belum Terverifikasi"),value: "Belum Terverifikasi"),
+    const DropdownMenuItem(value: "Terverifikasi", child: Text("Terverifikasi")),
+    const DropdownMenuItem(value: "Belum Terverifikasi", child: Text("Belum Terverifikasi")),
   ];
   return menuItems;
 }
@@ -207,7 +207,7 @@ class _suratKeluarState extends State<suratKeluar> {
               },
             ),
             ExpansionTile(
-              collapsedBackgroundColor: Color.fromARGB(255, 224, 243, 255),
+              collapsedBackgroundColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,

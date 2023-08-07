@@ -6,11 +6,11 @@ void _showPopupAlert(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Sukses'),
-        content: Text('Surat Diaccept'),
+        title: const Text('Sukses'),
+        content: const Text('Surat Diaccept'),
         actions: [
           TextButton(
-            child: Text('OK'),
+            child: const Text('OK'),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -28,8 +28,8 @@ void _showTextFieldAlert(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Revisi'),
-        content: Container(
+        title: const Text('Revisi'),
+        content: SizedBox(
           width: MediaQuery.of(context).size.width *
               0.8, // Adjust the width as needed
           child: Column(
@@ -37,7 +37,7 @@ void _showTextFieldAlert(BuildContext context) {
                 MainAxisSize.min, // Ensures the dialog box takes minimum space
             children: [
               Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
                 child: TextField(
                   controller: textController1,
                   decoration: const InputDecoration(
@@ -50,7 +50,7 @@ void _showTextFieldAlert(BuildContext context) {
         ),
         actions: [
           TextButton(
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -68,11 +68,11 @@ void _showTextFieldAlert(BuildContext context) {
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
-                    title: Text('Sukses'),
-                    content: Text('Revisi dikirim'),
+                    title: const Text('Sukses'),
+                    content: const Text('Revisi dikirim'),
                     actions: [
                       TextButton(
-                        child: Text('OK'),
+                        child: const Text('OK'),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
@@ -82,11 +82,11 @@ void _showTextFieldAlert(BuildContext context) {
                 },
               );
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.save,
               size: 24,
             ),
-            label: Text('Simpan'),
+            label: const Text('Simpan'),
           ),
         ],
       );
@@ -98,10 +98,10 @@ class pdfView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 239, 239, 239),
+      backgroundColor: const Color.fromARGB(255, 239, 239, 239),
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        iconTheme: const IconThemeData(color: Colors.black),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         centerTitle: true,
         title: const Text(
           'Permohonan Paraf',
@@ -132,7 +132,7 @@ class pdfView extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/dashboard.png'),
               ),
-              title: Text('Dashboard'),
+              title: const Text('Dashboard'),
               onTap: () {
                 Navigator.pushNamed(context, '/about');
               },
@@ -143,19 +143,19 @@ class pdfView extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/profil.png'),
               ),
-              title: Text('Profil'),
+              title: const Text('Profil'),
               onTap: () {
                 Navigator.pushNamed(context, '/profil');
               },
             ),
             ListTile(
-              tileColor: Color.fromARGB(255, 224, 243, 255),
+              tileColor: const Color.fromARGB(255, 224, 243, 255),
               leading: SizedBox(
                 width: 40,
                 height: 40,
                 child: Image.asset('assets/check.png'),
               ),
-              title: Text('Permohonan Paraf'),
+              title: const Text('Permohonan Paraf'),
               onTap: () {
                 Navigator.pushNamed(context, '/paraf');
               },
@@ -166,34 +166,34 @@ class pdfView extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/check.png'),
               ),
-              title: Text('Pengesahan'),
+              title: const Text('Pengesahan'),
               children: [
                 Container(
                   height: 130,
                   width: 260,
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                         height: 120,
-                        child: const ColoredBox(
+                        child: ColoredBox(
                             color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                      Container(
+                      SizedBox(
                         height: 120,
                         width: 150,
                         child: Column(
                           children: [
                             ListTile(
-                              title: Text('Pengesahan'),
+                              title: const Text('Pengesahan'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/pengesahan');
                               },
                             ),
                             ListTile(
-                              title: Text('Recheck'),
+                              title: const Text('Recheck'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/recheck');
                               },
@@ -212,7 +212,7 @@ class pdfView extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/suratMasuk.png'),
               ),
-              title: Text('Surat Masuk'),
+              title: const Text('Surat Masuk'),
               onTap: () {
                 Navigator.pushNamed(context, '/suratMasuk');
               },
@@ -223,34 +223,34 @@ class pdfView extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/suratKeluar.png'),
               ),
-              title: Text('Surat Keluar'),
+              title: const Text('Surat Keluar'),
               children: [
                 Container(
                   height: 130,
                   width: 260,
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                         height: 120,
-                        child: const ColoredBox(
+                        child: ColoredBox(
                             color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                      Container(
+                      SizedBox(
                         height: 120,
                         width: 150,
                         child: Column(
                           children: [
                             ListTile(
-                              title: Text('Surat Keluar'),
+                              title: const Text('Surat Keluar'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/suratKeluar');
                               },
                             ),
                             ListTile(
-                              title: Text('Draft Surat'),
+                              title: const Text('Draft Surat'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/draftSurat');
                               },
@@ -269,34 +269,34 @@ class pdfView extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/disposisi.png'),
               ),
-              title: Text('Disposisi'),
+              title: const Text('Disposisi'),
               children: [
                 Container(
                   height: 130,
                   width: 260,
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                         height: 120,
-                        child: const ColoredBox(
+                        child: ColoredBox(
                             color: Color.fromARGB(255, 224, 243, 255)),
                       ),
-                      Container(
+                      SizedBox(
                         height: 120,
                         width: 150,
                         child: Column(
                           children: [
                             ListTile(
-                              title: Text('Disposisi Masuk'),
+                              title: const Text('Disposisi Masuk'),
                               onTap: () {
                                 Navigator.pushNamed(context, '/disposisiMasuk');
                               },
                             ),
                             ListTile(
-                              title: Text('Disposisi Keluar'),
+                              title: const Text('Disposisi Keluar'),
                               onTap: () {
                                 Navigator.pushNamed(
                                     context, '/disposisiKeluar');
@@ -316,7 +316,7 @@ class pdfView extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/agenda.png'),
               ),
-              title: Text('Agenda'),
+              title: const Text('Agenda'),
               onTap: () {
                 Navigator.pushNamed(context, '/agenda');
               },
@@ -327,7 +327,7 @@ class pdfView extends StatelessWidget {
                 height: 40,
                 child: Image.asset('assets/help.png'),
               ),
-              title: Text('help'),
+              title: const Text('help'),
               onTap: () {
                 Navigator.pushNamed(context, '/help');
               },
@@ -345,7 +345,7 @@ class pdfView extends StatelessWidget {
         child: Column(
           children: [
             Container(
-                margin: EdgeInsets.all(16),
+                margin: const EdgeInsets.all(16),
                 child: const Center(
                   child: Text('Test/001',
                       style: TextStyle(
@@ -367,7 +367,7 @@ class pdfView extends StatelessWidget {
             Container(
               width: 340,
               height: 50,
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 child: const Text('Detail Surat'),
                 onPressed: () {
@@ -375,128 +375,128 @@ class pdfView extends StatelessWidget {
                       context: context,
                       builder: (BuildContext context) {
                         return SingleChildScrollView(
-                            padding: EdgeInsets.all(16),
+                            padding: const EdgeInsets.all(16),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Sifat :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   'Biasa',
                                   style: TextStyle(fontSize: 14),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   'Tanggal Surat :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   '23/09/2023',
                                   style: TextStyle(fontSize: 14),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   'Perihal :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   'Test',
                                   style: TextStyle(fontSize: 14),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   'Tanggal Kegiatan :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   '23/09/2023',
                                   style: TextStyle(fontSize: 14),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   'Dari :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   '08.00.00',
                                   style: TextStyle(fontSize: 14),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   'Sampai :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   '11.00.00',
                                   style: TextStyle(fontSize: 14),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   'Tempat Kegiatan :',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
-                                Text(
+                                const Text(
                                   'Test',
                                   style: TextStyle(fontSize: 14),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8.0,
                                 ),
                                 Container(
                                 child:Center( 
                                   child: ElevatedButton.icon(
                                     onPressed: (){},
-                                    icon: Icon(Icons.download),
-                                    label: Text('Unduh File')))
+                                    icon: const Icon(Icons.download),
+                                    label: const Text('Unduh File')))
                                 ),
                               ],
                             ));
@@ -511,10 +511,10 @@ class pdfView extends StatelessWidget {
             Container(
               width: 355,
               height: 100,
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
-                  Container(
+                  SizedBox(
                       height: 50,
                       width: 140,
                       child: ElevatedButton(
@@ -525,13 +525,13 @@ class pdfView extends StatelessWidget {
                           backgroundColor:
                               MaterialStateProperty.all<Color>(Colors.red),
                         ),
-                        child: Text(
+                        child: const Text(
                           'Revisi',
                           style: TextStyle(fontSize: 14),
                         ),
                       )),
-                  Spacer(),
-                  Container(
+                  const Spacer(),
+                  SizedBox(
                       height: 50,
                       width: 140,
                       child: ElevatedButton(
