@@ -540,7 +540,7 @@ class pdfViewpengesahan extends StatelessWidget {
                           _showPopupAlert(context);
                         },
                         child: const Text(
-                          'Accept',
+                          'TTD',
                           style: TextStyle(fontSize: 14),
                         ),
                       )),
