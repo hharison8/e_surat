@@ -73,6 +73,7 @@ flutter:
   - assets/more.png
   - assets/testo.jpg
   - assets/sample.pdf
+  - assets/default_profile.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
